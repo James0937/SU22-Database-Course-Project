@@ -11,7 +11,7 @@
 | Member1     |        Sifei Du        |
 | Member1     | sifeidu2@illinois.edu  |
 | Member2     |      Jiacheng Guo      |
-| Member2     |    jg23@@illinois.edu  |
+| Member2     |    jg23@illinois.edu   |
 | Member3     |       Zhiyuan Wang     |
 | Member3     |   zw39@illinois.edu    |
 
