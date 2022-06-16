@@ -8,12 +8,12 @@
 | TeamName    |           CDGW         |
 | Captain     |      Hongxiao Chen     |
 | Captain     |   hc39@illinois.edu    |
-| Member1     |   FirstName LastName   |
-| Member1     |      Member2-Email     |
-| Member2     |   FirstName LastName   |
-| Member2     |      Member3-Email     |
-| Member3     |   FirstName LastName   |
-| Member3     |      Member4-Email     |
+| Member1     |        Sifei Du        |
+| Member1     | sifeidu2@illinois.edu  |
+| Member2     |      Jiacheng Guo      |
+| Member2     |    jg23@@illinois.edu  |
+| Member3     |       Zhiyuan Wang     |
+| Member3     |   zw39@illinois.edu    |
 
 ## Project Information
 
