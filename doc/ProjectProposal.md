@@ -24,6 +24,10 @@ The data we get from the above link is real data from Airbnb covering all housin
 
 ## Work distribution
 Hongxiao Chen: JavaScript
+
 Sifei Du: SQL queries and data manipulation
+
 Jiacheng Guo: Python interface
+
 Zhiyuan Wang: HTML/CSS UI
+
