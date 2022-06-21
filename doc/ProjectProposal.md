@@ -1,9 +1,10 @@
 # Title: Chicago Airbnb Data Analysis
 
 ## Project Summary
-The project seeks to provide guidance and detailed analysis of Airbnb's in Chicago. It will provide 
+The project seeks to provide guidance and detailed analysis of Airbnb's in Chicago. This project utilizes the Airbnb datasets to provide a overview of housing information in Chicago. User can use database functionality to search for the entry of a specific house, find the closest house near them, or use the website to see the exact location of each house on a map.
 
 ## Description
+This dataset includes the Airbnb housing information about the hosts, position, description, and price, etc. The position includes the latitude and longtitude, which are useful for map display. The price and review scores are helpful for customers to select their ideal house. The dataset this derived from https://www.kaggle.com/datasets/jinbonnie/chicago-airbnb-open-data, which is part of the Airbnb dataset, and the original source can be found from Airbnb Open Data.
 
 
 ## Usefulness
