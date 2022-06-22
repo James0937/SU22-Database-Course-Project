@@ -19,7 +19,7 @@
 
 |   Info      |        Description                     |
 | ----------- | -------------------------------------- |
-|  Title      |       Chicago Airbnb Data Analysis     |
+|  Title      |      Chicago Airbnb Data Analysis      |
 | System URL  |      link_to_system                    |
 | Video Link  |      link_to_video                     |
 
