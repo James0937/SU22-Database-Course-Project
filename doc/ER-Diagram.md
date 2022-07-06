@@ -1,7 +1,7 @@
 # Team-023 CDGW ER Diagram
 
 ## Entity-Relationship Diagram
-![image](https://user-images.githubusercontent.com/73111353/177441653-bd9107b9-45e1-4012-9b1b-6051beb3cdd1.png)
+![CDGW drawio](https://user-images.githubusercontent.com/107632673/177460513-3491ec0c-fa6e-429a-b680-92bd0ba4f16e.png)
 
 ## Assumptions:
 
@@ -102,6 +102,7 @@ date: DATE
 );
 
 SurroundingInformation(
+
 neighborhood: VARCHAR(255) [PK],
 
 restaurant: VARCHAR(255),
@@ -112,6 +113,7 @@ others: VARCHAR(255)
 );
 
 PriceRange(
+
 range_name: VARCHAR(20) [PK],
 
 upper_bound: INT,
