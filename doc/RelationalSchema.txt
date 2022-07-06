@@ -1,3 +1,4 @@
+# This is not the main page of Stage.2, please view ER-Diagram.md.
 Home(
 home_id: INT [PK],
 host_id: INT [FK to Host.host_id],
