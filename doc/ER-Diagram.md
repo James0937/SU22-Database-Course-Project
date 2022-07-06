@@ -11,21 +11,20 @@ Home contains the descriptions of each Airbnb house that is avaliable for rentin
 
 ### Host
 
-Host contains the login information of the host. Each home must belong to only one host and a host can have multiple homes.
+Host contains the login information of the host. Each home must belong to exactly one host and a host can have multiple homes.
 
 ### Neighborhood
 
 Neighborhood contains the name of the neighborhood (such as Loop or Hyde Park) and the safety rating of the district. The relation is here to find the safety rating of an entity in Home.
-Each home must belongs to one neighborhood, and each neighborhood can have multiple homes.
+Each home must belongs to exactly one neighborhood, and each neighborhood can have multiple homes.
 
 ### Room Type
 
-This entity contains the description of each room type, such as apartment or villa. Each home has one type, and each type can contain multiple homes.
+This entity contains the description of each room type, such as apartment or villa. Each home has exactly one type, and each type can contain multiple homes.
 
 ### Tenant
 
-Tenant contains the id and name of the customer who rent homes. Each tenant can rent multiple homes and each home can be rented by multiple tenants. The relation contains additional "date" attribute to record
-the start date of the lease.
+Tenant contains the id and name of the customer who rent homes. Each tenant can rent multiple homes and each home can be rented by multiple tenants. The relation contains additional "date" attribute to record the start date of the lease.
 
 ### Price Range
 
@@ -33,7 +32,7 @@ This entity works as a table of reference for the range of the price (per night)
 
 ### Surrounding Information
 
-This entity contains additional information about each district, such as avaliable restaurants or hospitals in the district.
+This entity contains additional information about each district, such as avaliable restaurants or hospitals in the district. We plan to JOIN it with the main table ON same neighborhood name to link these information. 
 
 ## Relational Schema:
 Home (
@@ -104,13 +103,18 @@ date: DATE
 
 SurroundingInformation(
 neighborhood: VARCHAR(255) [PK],
+
 restaurant: VARCHAR(255),
+
 entertainment: VARCHAR(255),
+
 others: VARCHAR(255)
 );
 
 PriceRange(
 range_name: VARCHAR(20) [PK],
+
 upper_bound: INT,
+
 lower_bound: INT
 );
