@@ -2,7 +2,7 @@ Home(
 home_id: INT [PK],
 host_id: INT [FK to Host.host_id],
 neighborhood: VARCHAR(255) [FK to Neighborhood.neighborhood],
-room_type: VARCHAR(255) [FK to RoomType.type_name],
+room_type: VARCHAR(255) [FK to RoomType.type_id],
 name: VARCHAR(255),
 latitude: REAL,
 longtitude: REAL,
@@ -28,11 +28,11 @@ type_name: VARCHAR(255)
 
 Tenant(
 user_id: INT [PK],
-user_name: VARCHAR(50),
-date: DATE
+user_name: VARCHAR(50)
 );
 
 Rent(
 home_id: INT [PK] [FK to Home.home_id],
-user_id: INT [PK] [FK to Tenant.user_id]
+user_id: INT [PK] [FK to Tenant.user_id],
+date: DATE
 );
