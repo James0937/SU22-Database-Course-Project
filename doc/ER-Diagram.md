@@ -1,7 +1,8 @@
 # Team-023 CDGW ER Diagram
 
 ## Entity-Relationship Diagram
-![CDGW drawio](https://user-images.githubusercontent.com/107632673/177460513-3491ec0c-fa6e-429a-b680-92bd0ba4f16e.png)
+![CDGW drawio](https://user-images.githubusercontent.com/107632673/177460701-dc38e4bf-6ef7-45a5-9eaa-8411ab6084b3.png)
+
 
 ## Assumptions:
 
@@ -100,6 +101,7 @@ user_id: INT [PK] [FK to Tenant.user_id],
 date: DATE
 
 );
+
 
 SurroundingInformation(
 
