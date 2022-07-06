@@ -44,7 +44,7 @@ host_id: INT [FK to Host.host_id],
 
 neighborhood: VARCHAR(255) [FK to Neighborhood.neighborhood],
 
-room_type: VARCHAR(255) [FK to RoomType.type_id],
+room_type: INT [FK to RoomType.type_id],
 
 name: VARCHAR(255),
 
@@ -100,4 +100,17 @@ user_id: INT [PK] [FK to Tenant.user_id],
 
 date: DATE
 
+);
+
+SurroundingInformation(
+neighborhood: VARCHAR(255) [PK],
+restaurant: VARCHAR(255),
+entertainment: VARCHAR(255),
+others: VARCHAR(255)
+);
+
+PriceRange(
+range_name: VARCHAR(20) [PK],
+upper_bound: INT,
+lower_bound: INT
 );
