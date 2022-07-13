@@ -15,7 +15,7 @@ CREATE TABLE Home
     home_id INT,
     host_id INT,
     neighborhood VARCHAR(255),
-    room_id INT,
+    type_id INT,
     name VARCHAR(255),
     latitude REAL,
     longtitude REAL,
