@@ -28,5 +28,20 @@ CREATE TABLE Rent
     user_id INT,
     date DATE
 );
+
+CREATE TABLE Neighborhood (
+    neighborhood VARCHAR(255),
+    safety_score INT
+);
+
+CREATE TABLE RoomType (
+    type_id INT,
+    type_name VARCHAR(255)
+);
+
+CREATE TABLE Tenant (
+    user_id INT,
+    user_name VARCHAR(50)
+);
 ```
 ![2cf483fce0229cedf96e92b8ad44faf](https://user-images.githubusercontent.com/73111353/178375546-8b519b5e-86df-4937-9064-a1a5b731fab4.png)
