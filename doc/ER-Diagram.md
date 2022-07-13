@@ -36,89 +36,57 @@ This entity works as a table of reference for the range of the price (per night)
 This entity contains additional information about each district, such as avaliable restaurants or hospitals in the district. We plan to JOIN it with the main table ON same neighborhood name to link these information. 
 
 ## Relational Schema:
+```
 Home (
-
 home_id: INT [PK],
-
 host_id: INT [FK to Host.host_id],
-
 neighborhood: VARCHAR(255) [FK to Neighborhood.neighborhood],
-
 room_type: INT [FK to RoomType.type_id],
-
 name: VARCHAR(255),
-
 latitude: REAL,
-
 longtitude: REAL,
-
 price: REAL,
-
 minimum_nights: INT,
-
 availability_365: INT
-
 );
 
 Host (
-
 host_id: INT [PK],
-
 host_name: VARCHAR(50)
-
 );
 
 Neighborhood (
-
 neighborhood: VARCHAR(255) [PK],
-
 safety_score: INT
-
 );
 
 RoomType(
-
 type_id: INT [PK],
-
 type_name: VARCHAR(255)
-
 );
 
 Tenant (
-
 user_id: INT [PK],
-
 user_name: VARCHAR(50)
-
 );
 
 Rent (
-
 home_id: INT [PK] [FK to Home.home_id],
-
 user_id: INT [PK] [FK to Tenant.user_id],
-
 date: DATE
-
 );
 
 
 SurroundingInformation(
-
 neighborhood: VARCHAR(255) [PK],
-
 restaurant: VARCHAR(255),
-
 entertainment: VARCHAR(255),
-
 others: VARCHAR(255)
 );
 
 PriceRange(
-
 range_name: VARCHAR(20) [PK],
-
 upper_bound: INT,
-
 lower_bound: INT
 );
+```
