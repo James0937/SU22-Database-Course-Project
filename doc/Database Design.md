@@ -43,5 +43,20 @@ CREATE TABLE Tenant (
     user_id INT,
     user_name VARCHAR(50)
 );
+
+CREATE TABLE PriceRange
+(
+    range_name VARCHAR(20),
+    upper_bound INT,
+    lower_bound INT
+);
+
+CREATE TABLE SurroundingInformation
+(
+    neighborhood VARCHAR(255),
+    restaurant VARCHAR(255),
+    entertainment VARCHAR(255),
+    others VARCHAR(255)
+);
 ```
 ![2cf483fce0229cedf96e92b8ad44faf](https://user-images.githubusercontent.com/73111353/178375546-8b519b5e-86df-4937-9064-a1a5b731fab4.png)
