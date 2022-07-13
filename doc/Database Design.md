@@ -142,5 +142,13 @@ ORDER BY safety_score DESC, price;
 ```
 ![image](https://user-images.githubusercontent.com/73111353/178784667-0eb78521-5f19-4bc6-b446-860547ec86cd.png)
 
+## Indexing Analysis
+
+### 1. Performance Before Indexing
+
+Advanced Querry 1:
+![image](https://user-images.githubusercontent.com/73111353/178786372-354b712b-3745-4fd7-878d-e1ac6dc2021c.png)
+Advanced Querry 2:
+![image](https://user-images.githubusercontent.com/73111353/178786537-747361a0-4273-4494-99c7-d55a88358f4a.png)
 
 
