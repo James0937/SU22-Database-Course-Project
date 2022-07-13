@@ -152,12 +152,9 @@ Default Index:
 Advanced Querry 1:
 ![image](https://user-images.githubusercontent.com/73111353/178798834-22a0c18e-6686-4a29-9dd3-107d3160c581.png)
 ![image](https://user-images.githubusercontent.com/73111353/178798812-c4dc1409-827d-472e-bff1-af386674a846.png)
-![image](https://user-images.githubusercontent.com/73111353/178802889-2276ebd3-5440-4ff6-b8f0-406902e3c65e.png)
 
 Advanced Querry 2:
 ![image](https://user-images.githubusercontent.com/73111353/178798685-a0d1508a-cfe9-4051-ac1c-fb1f7798cd6c.png)
-![image](https://user-images.githubusercontent.com/73111353/178802926-17b49b6b-b518-4df3-b5cf-36eb8834e688.png)
-
 
 ### 2. Performance After Indexing
 
@@ -172,11 +169,12 @@ Advanced Querry 2:
 ![image](https://user-images.githubusercontent.com/73111353/178799519-a83c11e8-d676-4a3c-93e5-fd62b010b81c.png)
 
 Report:
+After creating index idx_neighborhood, the time cost in query1 remains the same, but it in query2 reduces 0.01s.
+Firstly, for the first one, it indexes on a GROUP BY attribute, which means that SQL will scan the whole table without using this index, therefore it cannot reduce the cost. For the second query, the "Neighborhood" table is used during the joining part. A separate index of the used table for joining procedure could reduce the query cost slightly(from 0.03s to 0.02s).
 
-#### 2.2 host_name
+#### 2.2
 
 Index:
-![image](https://user-images.githubusercontent.com/73111353/178803151-dcd44ae6-95fa-438c-8bd8-1283a0983d9b.png)
 
 Advanced Querry 1:
 
