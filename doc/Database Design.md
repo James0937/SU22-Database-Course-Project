@@ -123,7 +123,14 @@ CREATE TABLE Neighborhood (
 
 ## Advanced Querries
 
-### 1. Price Range Distribution
+### 1. Price Range Distribution In Neighborhoods
+```
+USE Airbnb;
+SELECT neighborhood, range_name as price_range, COUNT(home_id) as total_homes
+FROM Home NATURAL JOIN Host NATURAL JOIN RoomType JOIN PriceRange pr ON (price >= pr.lower_bound AND price < pr.upper_bound)
+GROUP BY neighborhood, price_range
+ORDER BY neighborhood;
+```
 ![image](https://user-images.githubusercontent.com/73111353/178781526-a621a218-b312-46ea-9952-d73664da9112.png)
 
 
