@@ -172,7 +172,7 @@ Report:
 After creating index idx_neighborhood, the time cost in query1 remains the same, but it in query2 reduces 0.01s.
 Firstly, for the first one, it indexes on a GROUP BY attribute, which means that SQL will scan the whole table without using this index, therefore it cannot reduce the cost. For the second query, the "Neighborhood" table is used during the joining part. A separate index of the used table for joining procedure could reduce the query cost slightly(from 0.03s to 0.02s).
 
-#### 2.2
+#### 2.2 Safety Score
 
 Index:
 
