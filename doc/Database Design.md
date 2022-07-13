@@ -133,15 +133,14 @@ ORDER BY neighborhood;
 ```
 ![image](https://user-images.githubusercontent.com/73111353/178781526-a621a218-b312-46ea-9952-d73664da9112.png)
 
-### 2. Total Homes In Neighborhoods With Low Price Per Night
+### 2. Low Price Homes Ranked By Safety Score And Price
 ```
 USE Airbnb;
-SELECT neighborhood, safety_score, COUNT(home_id) as total_low_price_homes
+SELECT home_id, price, neighborhood, safety_score
 FROM (SELECT * FROM Home WHERE Price < 225) as LowPriceHomes NATURAL JOIN Host NATURAL JOIN RoomType NATURAL JOIN Neighborhood
-GROUP BY neighborhood, safety_score 
-ORDER BY safety_score DESC, total_low_price_homes DESC;
+ORDER BY safety_score DESC, price;
 ```
-![image](https://user-images.githubusercontent.com/73111353/178783151-0eb38a30-dbe2-47f3-b46c-662708aed175.png)
+![image](https://user-images.githubusercontent.com/73111353/178784463-c49f71f1-0f58-40c3-adf3-0ca8ad13d3b7.png)
 
 
 
