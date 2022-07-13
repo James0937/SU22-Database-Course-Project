@@ -137,10 +137,10 @@ ORDER BY neighborhood;
 ```
 USE Airbnb;
 SELECT home_id, price, neighborhood, safety_score
-FROM (SELECT * FROM Home WHERE Price < 225) as LowPriceHomes NATURAL JOIN Host NATURAL JOIN RoomType NATURAL JOIN Neighborhood
+FROM (SELECT * FROM Home WHERE Price < 225) as LowPriceHomes NATURAL JOIN Neighborhood
 ORDER BY safety_score DESC, price;
 ```
-![image](https://user-images.githubusercontent.com/73111353/178784463-c49f71f1-0f58-40c3-adf3-0ca8ad13d3b7.png)
+![image](https://user-images.githubusercontent.com/73111353/178784667-0eb78521-5f19-4bc6-b446-860547ec86cd.png)
 
 
 
