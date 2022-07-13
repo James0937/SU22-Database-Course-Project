@@ -159,7 +159,19 @@ Advanced Querry 2:
 
 ### 2. Performance After Indexing
 
-#### 2.1 
+#### 2.1 neighborhood
+Index:
+![image](https://user-images.githubusercontent.com/73111353/178799426-9053c6fd-07ba-4de0-a268-4c5ec9b62616.png)
+
+Advanced Querry 1:
+![image](https://user-images.githubusercontent.com/73111353/178799366-18d31aba-b2c5-440e-9395-1b8bb2ffd441.png)
+
+Advanced Querry 2:
+![image](https://user-images.githubusercontent.com/73111353/178799519-a83c11e8-d676-4a3c-93e5-fd62b010b81c.png)
+
+Report:
+
+
 
 
 
