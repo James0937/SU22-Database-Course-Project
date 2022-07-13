@@ -14,7 +14,7 @@ On MySQL Workbench:
 ```
 CREATE TABLE Home
 (
-    home_id INT,
+    home_id INT PRIMARY KEY,
     host_id INT,
     neighborhood VARCHAR(255),
     type_id INT,
@@ -28,42 +28,42 @@ CREATE TABLE Home
 
 CREATE TABLE Host
 (
-    host_id INT,
+    host_id INT PRIMARY KEY,
     host_name VARCHAR(50)
 );
 
 CREATE TABLE Rent
 (
-    home_id INT,
+    home_id INT PRIMARY KEY,
     user_id INT,
     date DATE
 );
 
 CREATE TABLE Neighborhood (
-    neighborhood VARCHAR(255),
+    neighborhood VARCHAR(255) PRIMARY KEY,
     safety_score INT
 );
 
 CREATE TABLE RoomType (
-    type_id INT,
+    type_id INT PRIMARY KEY,
     type_name VARCHAR(255)
 );
 
 CREATE TABLE Tenant (
-    user_id INT,
+    user_id INT PRIMARY KEY,
     user_name VARCHAR(50)
 );
 
 CREATE TABLE PriceRange
 (
-    range_name VARCHAR(20),
+    range_name VARCHAR(20) PRIMARY KEY,
     upper_bound INT,
     lower_bound INT
 );
 
 CREATE TABLE SurroundingInformation
 (
-    neighborhood VARCHAR(255),
+    neighborhood VARCHAR(255) PRIMARY KEY,
     restaurant VARCHAR(255),
     entertainment VARCHAR(255),
     others VARCHAR(255)
@@ -73,7 +73,7 @@ CREATE TABLE SurroundingInformation
 ```
 CREATE TABLE Home
 (
-    home_id INT,
+    home_id INT PRIMARY KEY,
     host_id INT,
     neighborhood VARCHAR(255),
     type_id INT,
@@ -94,7 +94,7 @@ CREATE TABLE Home
 ```
 CREATE TABLE Host
 (
-    host_id INT,
+    host_id INT PRIMARY KEY,
     host_name VARCHAR(50)
 );
 ```
@@ -104,7 +104,7 @@ CREATE TABLE Host
 ### Tenant
 ```
 CREATE TABLE Tenant (
-    user_id INT,
+    user_id INT PRIMARY KEY,
     user_name VARCHAR(50)
 );
 ```
@@ -114,7 +114,7 @@ CREATE TABLE Tenant (
 ### Neighborhood
 ```
 CREATE TABLE Neighborhood (
-    neighborhood VARCHAR(255),
+    neighborhood VARCHAR(255) PRIMARY KEY,
     safety_score INT
 );
 ```
