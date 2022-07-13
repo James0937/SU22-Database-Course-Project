@@ -101,3 +101,14 @@ CREATE TABLE Host
 ![image](https://user-images.githubusercontent.com/73111353/178641524-85668384-18c9-402c-929d-6d12d19983b1.png)
 ![image](https://user-images.githubusercontent.com/73111353/178641285-6f7f61aa-fd9f-45d8-8782-5a7b42d40ad3.png)
 
+### Tenant
+```
+CREATE TABLE Tenant (
+    user_id INT,
+    user_name VARCHAR(50)
+);
+```
+![image](https://user-images.githubusercontent.com/73111353/178647668-d9355d9d-a23c-447b-9bf9-4c583dd7ecc8.png)
+![image](https://user-images.githubusercontent.com/73111353/178647736-68fed5cf-64b4-464a-acd8-289ea7e6377e.png)
+
+
