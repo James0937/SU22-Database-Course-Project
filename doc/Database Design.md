@@ -2,9 +2,11 @@
 
 ## Connection:
 On GCC:
+
 ![image](https://user-images.githubusercontent.com/73111353/178641741-354dad77-f9c1-4329-b5b5-592478090a06.png)
 
 On MySQL Workbench:
+
 ![image](https://user-images.githubusercontent.com/73111353/178641334-f82b763b-dade-4f29-a6ca-7e88e0ef1b86.png)
 
 
@@ -67,6 +69,28 @@ CREATE TABLE SurroundingInformation
     others VARCHAR(255)
 );
 ```
+### Home:
+```
+CREATE TABLE Home
+(
+    home_id INT,
+    host_id INT,
+    neighborhood VARCHAR(255),
+    type_id INT,
+    name VARCHAR(255),
+    latitude REAL,
+    longtitude REAL,
+    price REAL,
+    minimum_nights INT,
+    availability_365 INT
+);
+```
+![image](https://user-images.githubusercontent.com/73111353/178646394-905f0b7b-bba1-4814-98be-101bcf776712.png)
+
+![image](https://user-images.githubusercontent.com/73111353/178646444-4d32a78e-0802-4dea-9c8b-9a28f657bc4b.png)
+
+
+
 ### Host
 ```
 CREATE TABLE Host
