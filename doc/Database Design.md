@@ -10,7 +10,7 @@ On MySQL Workbench:
 
 ## Tables:
 ```
-CREATE TABLE Homes
+CREATE TABLE Home
 (
     home_id INT,
     host_id INT,
