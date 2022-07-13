@@ -121,3 +121,9 @@ CREATE TABLE Neighborhood (
 ![image](https://user-images.githubusercontent.com/107632673/178653567-81804f3e-1f3b-4f38-b4a0-041d516a5d71.png)
 ![image](https://user-images.githubusercontent.com/107632673/178653837-c98a1b6a-d268-4e7d-a387-f870f1766cb0.png)
 
+## Advanced Querries
+
+### 1. Price Range Distribution
+![image](https://user-images.githubusercontent.com/73111353/178781526-a621a218-b312-46ea-9952-d73664da9112.png)
+
+
