@@ -173,7 +173,7 @@ Advanced Query 2:
 
 Report:
 
-We create this index to help reduce the time cost for all queries. After creating index idx_neighborhood, the time cost in query1 remains the same, but it in query2 reduces 0.01s.
+We create this index to help reduce the time cost for all queries. After creating index idx_neighborhood, the time cost in query1 remains the same, but it in query2 reduces by 0.01s.
 Firstly, for the first one, it indexes on a GROUP BY attribute, which means that SQL will scan the whole table without using this index, therefore it cannot reduce the cost. For the second query, the "Neighborhood" table is used during the joining part. A separate index of the used table for joining procedure could reduce the query cost slightly(from 0.03s to 0.02s).
 
 #### 2.2 Safety Score
@@ -192,7 +192,7 @@ Advanced Query 2:
 
 Report:
 
-We create this index to help reduce the time cost for the second query. After creating index idx_ss for safety score, the time cost in query1 still remains the same, but it in query2 reduces 0.02s.
+We create this index to help reduce the time cost for the second query. After creating index idx_ss for safety score, the time cost in query1 still remains the same, but it in query2 reduces by 0.02s.
 For the first one, since it does not JOIN with the Neighborhood table, so idx_ss will not affect the performance. For the second query, the "Neighborhood" table is used during the joining part and safety score is used during the ORDER BY part. The index can help reduce the time used here(sort actual time drop from 24.625 to 14.468 and total time drop from 0.03s to 0.01s).
 
 #### 2.3 Price Range: Upper Bound
@@ -212,4 +212,4 @@ Advanced Query 2:
 Report:
 
 We create this index to help reduce the time cost for the first query. After creating index idx_p_u for the upper bound of the PriceRange table, the time cost in query1 increases significantly to 0.10s, but in query 2 it does not change much.
-For the first one, by default it is using the primary key of PriceRange table for sorting, so adding this redundant index will reduce the sort performance(from 22.23 to 96.32). Since the PriceRange table is relatively small and we cannot reduce the cardinality of indexes, we cannot save the cost whiile joining the table. So indexing is not always beneficial. For the second query, it does not use the PriceRange table, so the time change is probably random.
+For the first one, by default it is using the primary key of PriceRange table for sorting, so adding this redundant index will reduce the sort performance(from 22.23 to 96.32). Since the PriceRange table is relatively small and we cannot reduce the cardinality of indexes, we cannot save the cost while joining the table. So indexing is not always beneficial. For the second query, it does not use the PriceRange table, so the time change is probably random.
