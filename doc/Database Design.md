@@ -150,7 +150,8 @@ Default Index:
 ![image](https://user-images.githubusercontent.com/73111353/178797645-41f940e5-a9fa-4c18-b25a-f27b411f47f3.png)
 
 Advanced Querry 1:
-![image](https://user-images.githubusercontent.com/73111353/178786372-354b712b-3745-4fd7-878d-e1ac6dc2021c.png)
+![image](https://user-images.githubusercontent.com/73111353/178798834-22a0c18e-6686-4a29-9dd3-107d3160c581.png)
+![image](https://user-images.githubusercontent.com/73111353/178798812-c4dc1409-827d-472e-bff1-af386674a846.png)
 
 Advanced Querry 2:
 ![image](https://user-images.githubusercontent.com/73111353/178798685-a0d1508a-cfe9-4051-ac1c-fb1f7798cd6c.png)
