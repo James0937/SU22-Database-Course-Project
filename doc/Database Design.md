@@ -1,5 +1,9 @@
 # Database Design
 
+## Connection:
+![image](https://user-images.githubusercontent.com/73111353/178641334-f82b763b-dade-4f29-a6ca-7e88e0ef1b86.png)
+
+
 ## Tables:
 ```
 CREATE TABLE Homes
@@ -59,4 +63,15 @@ CREATE TABLE SurroundingInformation
     others VARCHAR(255)
 );
 ```
-![2cf483fce0229cedf96e92b8ad44faf](https://user-images.githubusercontent.com/73111353/178375546-8b519b5e-86df-4937-9064-a1a5b731fab4.png)
+### Host
+```
+CREATE TABLE Host
+(
+    host_id INT,
+    host_name VARCHAR(50)
+);
+```
+![image](https://user-images.githubusercontent.com/73111353/178641524-85668384-18c9-402c-929d-6d12d19983b1.png)
+
+![image](https://user-images.githubusercontent.com/73111353/178641285-6f7f61aa-fd9f-45d8-8782-5a7b42d40ad3.png)
+
