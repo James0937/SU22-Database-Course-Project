@@ -146,19 +146,19 @@ ORDER BY safety_score DESC, price;
 
 ### 1. Performance Before Indexing
 
+Default Index:
+![image](https://user-images.githubusercontent.com/73111353/178797645-41f940e5-a9fa-4c18-b25a-f27b411f47f3.png)
+
 Advanced Querry 1:
 ![image](https://user-images.githubusercontent.com/73111353/178786372-354b712b-3745-4fd7-878d-e1ac6dc2021c.png)
+
 Advanced Querry 2:
-![image](https://user-images.githubusercontent.com/73111353/178786537-747361a0-4273-4494-99c7-d55a88358f4a.png)
+![image](https://user-images.githubusercontent.com/73111353/178798180-78e17ee1-dafe-494b-9d74-99e82d0b7f09.png)
+
 
 ### 2. Performance After Indexing
 
-#### 2.1 home_id
-![image](https://user-images.githubusercontent.com/73111353/178787200-9cf2b4ac-82cf-4ca4-946f-228c6338d2f0.png)
-
-![image](https://user-images.githubusercontent.com/73111353/178787280-3c3027f5-e5ed-4a9e-8d8c-dc32ebe55c29.png)
-
-![image](https://user-images.githubusercontent.com/73111353/178787377-008a3de2-e55d-47db-975b-1c299bccf877.png)
+#### 2.1 
 
 
 
