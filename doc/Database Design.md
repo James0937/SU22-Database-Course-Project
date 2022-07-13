@@ -1,6 +1,10 @@
 # Database Design
 
 ## Connection:
+On GCC:
+![image](https://user-images.githubusercontent.com/73111353/178641741-354dad77-f9c1-4329-b5b5-592478090a06.png)
+
+On MySQL Workbench:
 ![image](https://user-images.githubusercontent.com/73111353/178641334-f82b763b-dade-4f29-a6ca-7e88e0ef1b86.png)
 
 
@@ -72,6 +76,5 @@ CREATE TABLE Host
 );
 ```
 ![image](https://user-images.githubusercontent.com/73111353/178641524-85668384-18c9-402c-929d-6d12d19983b1.png)
-
 ![image](https://user-images.githubusercontent.com/73111353/178641285-6f7f61aa-fd9f-45d8-8782-5a7b42d40ad3.png)
 
