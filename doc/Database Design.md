@@ -160,15 +160,19 @@ Advanced Querry 2:
 
 #### 2.1 neighborhood
 Index:
+
 ![image](https://user-images.githubusercontent.com/73111353/178799426-9053c6fd-07ba-4de0-a268-4c5ec9b62616.png)
 
 Advanced Querry 1:
+
 ![image](https://user-images.githubusercontent.com/73111353/178799366-18d31aba-b2c5-440e-9395-1b8bb2ffd441.png)
 
 Advanced Querry 2:
+
 ![image](https://user-images.githubusercontent.com/73111353/178799519-a83c11e8-d676-4a3c-93e5-fd62b010b81c.png)
 
 Report:
+
 After creating index idx_neighborhood, the time cost in query1 remains the same, but it in query2 reduces 0.01s.
 Firstly, for the first one, it indexes on a GROUP BY attribute, which means that SQL will scan the whole table without using this index, therefore it cannot reduce the cost. For the second query, the "Neighborhood" table is used during the joining part. A separate index of the used table for joining procedure could reduce the query cost slightly(from 0.03s to 0.02s).
 
@@ -176,10 +180,20 @@ Firstly, for the first one, it indexes on a GROUP BY attribute, which means that
 
 Index:
 
+![image](https://user-images.githubusercontent.com/73111353/178823867-e8ca92fb-5d0a-4d6a-8b11-5b92e5b81e87.png)
+
 Advanced Querry 1:
 
+![image](https://user-images.githubusercontent.com/73111353/178824021-737cfc22-c316-4feb-8b26-b8659ca53b82.png)
 
+Advanced Querry 2:
 
+![image](https://user-images.githubusercontent.com/73111353/178824111-e15a583f-5f92-42c8-9d3a-1ec2157dd4db.png)
+
+Report:
+
+After creating index idx_ss for safety score, the time cost in query1 still remains the same, but it in query2 reduces 0.02s.
+For the first one, since it does not JOIN with the Neighborhood table, so idx_ss will not affect the performance. For the second query, the "Neighborhood" table is used during the joining part and safety score is used during the ORDER BY part. The index can help reduce the time used here(sort actual time drop from 24.625 to 14.468).
 
 
 
