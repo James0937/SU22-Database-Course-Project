@@ -153,7 +153,7 @@ Advanced Querry 1:
 ![image](https://user-images.githubusercontent.com/73111353/178786372-354b712b-3745-4fd7-878d-e1ac6dc2021c.png)
 
 Advanced Querry 2:
-![image](https://user-images.githubusercontent.com/73111353/178798180-78e17ee1-dafe-494b-9d74-99e82d0b7f09.png)
+![image](https://user-images.githubusercontent.com/73111353/178798685-a0d1508a-cfe9-4051-ac1c-fb1f7798cd6c.png)
 
 
 ### 2. Performance After Indexing
