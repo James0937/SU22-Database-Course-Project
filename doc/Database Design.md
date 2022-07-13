@@ -111,7 +111,7 @@ CREATE TABLE Tenant (
 ![image](https://user-images.githubusercontent.com/73111353/178647668-d9355d9d-a23c-447b-9bf9-4c583dd7ecc8.png)
 ![image](https://user-images.githubusercontent.com/73111353/178647736-68fed5cf-64b4-464a-acd8-289ea7e6377e.png)
 
-### 
+### Neighborhood
 ```
 CREATE TABLE Neighborhood (
     neighborhood VARCHAR(255),
