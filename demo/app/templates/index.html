@@ -1,0 +1,181 @@
+<html>
+
+<head>
+    <title>CSS Format</title>
+    <script src="javascript.js"></script> 
+    <script type="module" src="index.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            padding:6px 10px;
+            margin-top: 50px;
+            margin-left: 100px;
+        }
+
+        #search-container {
+            top: 50%;
+            left: 50%;
+        }
+        
+        #search-container input[type=text] {
+            width: 500px;
+            height: 60px;
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 20px;
+            border-color: black;
+        }
+        
+        #search-container button {
+            float: inherit;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        #search-container button:hover {
+            background: #ccc;
+        }
+
+        .filter-table {
+            margin-top: 10px;
+            width: 600px
+        }
+
+        .filter-table th {
+            width:100px;
+        }
+
+        .result-table {
+            margin-top: 10px;
+            border-collapse: collapse;
+            width: 600px;
+        }
+
+        .result-table td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:hover {background-color: #D6EEEE;}
+
+        #map {
+            margin-top: 10px;
+            position:relative;
+            height: 400px;
+            width: 30%;
+        }
+        
+        @media (max-width: 600px) {
+            section {
+                -webkit-flex-direction: column;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="whole-page">
+        <header>
+            <!--TODO-->
+        </header>
+        <div id="overall-layer">
+            <nav>
+                <!--TODO-->
+            </nav>
+            <div id="content">
+                <div id="search-container">
+                    <form>
+                        <input type="text" placeholder="Search houses in Chicago" name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div>
+                    <table class="filter-table">
+                        <tr>
+                            <th>Safety Score Range</th>
+                            <td>
+                                <form>
+                                    <div id="checkboxes-1">
+                                        <label for="one">
+                                            <input type="checkbox" id="one-1" />90 or higher</label>
+                                        <label for="two">
+                                            <input type="checkbox" id="two-1" />80 - 90</label>
+                                        <label for="three">
+                                            <input type="checkbox" id="three-1" />70 - 80</label>
+                                        <label for="four">
+                                            <input type="checkbox" id="four-2" />60 - 70</label>
+                                        <label for="five">
+                                            <input type="checkbox" id="five-2" />60 or lower</label>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Price Range</th>
+                            <td>
+                                <form>
+                                    <div id="checkboxes-2">
+                                        <label for="one">
+                                            <input type="checkbox" id="one-2" />$0 - $75</label>
+                                        <label for="two">
+                                            <input type="checkbox" id="two-2" />$75 - $150</label>
+                                        <label for="three">
+                                            <input type="checkbox" id="three-2" />$150 - $225</label>
+                                        <label for="four">
+                                            <input type="checkbox" id="four-2" />$225 - $300</label>
+                                        <label for="five">
+                                            <input type="checkbox" id="five-2" />$300 or higher</label>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>District</th>
+                            <td>
+                                <form>
+                                    <div id="checkboxes-3">
+                                        <label for="one">
+                                            <input type="checkbox" id="one-2" />$0 - $75</label>
+                                        <label for="two">
+                                            <input type="checkbox" id="two-2" />$75 - $150</label>
+                                        <label for="three">
+                                            <input type="checkbox" id="three-2" />$150 - $225</label>
+                                        <label for="four">
+                                            <input type="checkbox" id="four-2" />$225 - $300</label>
+                                        <label for="five">
+                                            <input type="checkbox" id="five-2" />$300 or higher</label>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="result-table">
+                    <table class="result-table">
+                        <tr>
+                          <th>House Name</th>
+                          <th>Price</th>
+                          <th>Safety Score</th>
+                          <th>District</th>
+                        </tr>
+                      </table>
+                </div>
+                <div id="map"></div>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
