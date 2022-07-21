@@ -11,8 +11,8 @@ def search(name) -> dict:
         item = {
             "house_name": result[0],
             "price": result[1],
-            "safety_score": result[2],
-            "district": result[3]
+            "safety_score": result[3],
+            "district": result[2]
         }
         res_list.append(item)
 

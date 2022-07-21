@@ -46,10 +46,10 @@ function searchClick() {
         house_name.innerHTML = query.house_name;
         let price = row.insertCell(1);
         price.innerHTML = query.price;
-        let safety_score = row.insertCell(2);
-        safety_score.innerHTML = query.safety_score;
         let district = row.insertCell(2);
         district.innerHTML = query.district;
+        let safety_score = row.insertCell(3);
+        safety_score.innerHTML = query.safety_score;
       });     
     },
     error: function() {
