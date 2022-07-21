@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Edit</title>
+        <script src="javascript.js"></script> 
+        <script type="module" src="index.js"></script>
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        #search-container {
+            top: 50%;
+            left: 50%;
+        }
+        
+        #search-container input[type=text] {
+            width: 500px;
+            height: 60px;
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 20px;
+            border-color: black;
+        }
+        
+        #search-container button {
+            float: inherit;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        #search-container button:hover {
+            background: #ccc;
+        }
+        </style>
+    </head>
+
+    <body>
+        <h2>Edit a house</h2>
+        <form>
+            <input type="text" placeholder="House Name" name="name">
+            <input type="text" placeholder="House Price" name="price">
+            <input type="text" placeholder="House Latitude" name="latitude">
+            <input type="text" placeholder="House Longtitude" name="longtitude">
+            <input type="text" placeholder="District" name="district">
+            <button type="submit"><i class="fa fa-search">Submit Edit</i></button>
+            <button type="button" onclick="location.href='test.html'"><i class="fa fa-search">Cancel</i></button>
+        </form>
+    </body>
+</html>
