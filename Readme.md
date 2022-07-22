@@ -3,6 +3,28 @@ This is a template for CS411 project repository. Please make sure that your titl
 
 Once you setup your project, please remember to submit your team formation to the team form.
 
+## Direction for git:
+
+### To commit, run:
+
+`
+git add -A
+`
+
+`
+git commit -m "REPLACE THIS WITH YOUR COMMIT MESSAGE"
+`
+
+`
+git push origin main
+`
+
+### To fetch latest commit, run:
+
+`
+git pull origin main
+`
+
 ## Permission
 Please make your repository private. TAs can view private ones.
 
