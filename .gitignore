@@ -1,3 +1,2 @@
 demo/.venv
-demo/app.yaml
-demo/app/__pycache__
+**/__pycache__/
