@@ -17,3 +17,11 @@ def search(name) -> dict:
         res_list.append(item)
 
     return res_list
+
+def add(data) -> None:
+    conn = db.connect()
+    home_id = conn.execute("SELECT MAX(home_id) FROM Home").fetchall()[0][0] + 1
+    query = "INSERT INTO Home(home_id, host_id, name, price, neighborhood, latitude, longtitude) VALUES(%s, %s, \"%s\", %s, \"%s\", %s, %s);" % (home_id, 0, data['name'], data['price'], data['district'], data['latitude'], data['longtitude'])
+    conn.execute(query)
+    conn.close()
+    return home_id
