@@ -25,3 +25,9 @@ def add(data) -> int:
     conn.execute(query)
     conn.close()
     return home_id
+
+def delete(data: int) -> None:
+	conn = db.connect()
+	query = "DELETE FROM Home WHERE home_id = {};".format(data)
+	conn.execute(query)
+	conn.close()

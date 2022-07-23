@@ -24,3 +24,13 @@ def add():
     home_id = db.add(data)
     result = {'success': True, 'response': home_id}
     return jsonify(result)
+
+@app.route("/delete", methods = ['POST'])
+def delete():
+    data = request.get_json()
+    try:
+        db.delete(data['home_id'])
+        result = {'success':True, 'response':'Removed task'}
+    except:
+        result = {'success':False, 'response':'Something went wrong'}
+    return jsonify(result)
