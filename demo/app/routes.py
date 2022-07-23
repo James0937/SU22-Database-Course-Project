@@ -11,6 +11,10 @@ def homepage():
 def addpage():
     return render_template("add.html")
 
+@app.route("/edit.html")
+def editpage():
+    return render_template("edit.html")
+
 @app.route("/search", methods = ['POST'])
 def search():
     data = request.get_json()
