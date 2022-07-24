@@ -58,45 +58,48 @@
         }
 
         tr:hover {background-color: #D6EEEE;}
+
+        #delete-button {
+            padding-top: 10px;
+        }
     </style>
 </head>
 
 <body>
     <div id="whole-page">
-        <header>
-            <div id="Search-delete" class="tabcontent">
-                <div id="overall-layer-delete">
-                    <nav>
-                        <!--TODO-->
-                    </nav>
-                    <div id="content-delete">
-                        <div id="search-container-delete">
-                            <form>
-                                <input type="text" placeholder="Search houses in Chicago" name="search">
-                                <button type="button"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
-                        <div id="result-table-delete">
-                            <table class="result-table">
-                                <tr>
-                                    <th>HomeId</th>
-                                    <th>House Name</th>
-                                    <th>Price</th>
-                                    <th>Safety Score</th>
-                                    <th>District</th>
-                                    <th>Delete</th>
-                                </tr>
-                              </table>
-                        </div>
-                        <div id="delete-button">
-                            <form>
-                                <button type="button">Delete</button>
-                            </form>
-                        </div>
+        <div id="Search-delete" class="tabcontent">
+            <div id="overall-layer-delete">
+                <nav>
+                    <!--TODO-->
+                </nav>
+                <div id="content-delete">
+                    <h1>Delete a house</h1>
+                    <div id="search-container-delete">
+                        <form>
+                            <input type="text" placeholder="Search houses in Chicago" name="search">
+                            <button type="button"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div id="result-table-delete">
+                        <table class="result-table">
+                            <tr>
+                                <th>HomeId</th>
+                                <th>House Name</th>
+                                <th>Price</th>
+                                <th>Safety Score</th>
+                                <th>District</th>
+                                <th>Delete</th>
+                            </tr>
+                            </table>
+                    </div>
+                    <div id="delete-button">
+                        <form>
+                            <button type="button">Delete</button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
     </div>
 </body>
 
