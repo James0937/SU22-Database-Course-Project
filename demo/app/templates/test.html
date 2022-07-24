@@ -126,6 +126,7 @@
             <div class="tab">
                 <button class="tablinks" onclick="openTab(event, 'Search')">Search</button>
                 <button class="tablinks" onclick="openTab(event, 'Edit')">Edit</button>
+                <button class="tablinks" onclick="openTab(event, 'Overview')">Overview</button>
             </div>
             
             <div id="Search" class="tabcontent">
@@ -225,6 +226,21 @@
             <div id="Edit" class="tabcontent">
                 <button id="Add" onclick="location.href='add.html'" type="button">Add a house</button>
                 <button id="Edit" onclick="location.href='edit.html'" type="button">Edit a house</button>
+            </div>
+
+            <div id="Overview" class="tabcontent">
+                <table class="result-table">
+                    <thead>
+                        <tr>
+                            <th>District</th>
+                            <th>Price Range</th>
+                            <th>Total Homes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+
+                    </tbody>
+                </table>
             </div>
         </header>
     </div>
