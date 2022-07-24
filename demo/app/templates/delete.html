@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <title>Main</title>
+    <script src="javascript.js"></script> 
+    <script type="module" src="index.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            padding:6px 10px;
+            margin-top: 50px;
+            margin-left: 100px;
+        }
+
+        #search-container {
+            top: 50%;
+            left: 50%;
+        }
+        
+        #search-container input[type=text] {
+            width: 500px;
+            height: 60px;
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 20px;
+            border-color: black;
+        }
+        
+        #search-container button {
+            float: inherit;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        #search-container button:hover {
+            background: #ccc;
+        }
+
+        .result-table {
+            margin-top: 10px;
+            border-collapse: collapse;
+            width: 700px;
+        }
+
+        .result-table td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:hover {background-color: #D6EEEE;}
+    </style>
+</head>
+
+<body>
+    <div id="whole-page">
+        <header>
+            <div id="Search-delete" class="tabcontent">
+                <div id="overall-layer-delete">
+                    <nav>
+                        <!--TODO-->
+                    </nav>
+                    <div id="content-delete">
+                        <div id="search-container-delete">
+                            <form>
+                                <input type="text" placeholder="Search houses in Chicago" name="search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                        <div id="result-table">
+                            <table class="result-table">
+                                <tr>
+                                    <th>HomeId</th>
+                                    <th>House Name</th>
+                                    <th>Price</th>
+                                    <th>Safety Score</th>
+                                    <th>District</th>
+                                    <th>Delete</th>
+                                </tr>
+                              </table>
+                        </div>
+                        <div id="delete-button">
+                            <form>
+                                <button type="button">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+
+</html>
