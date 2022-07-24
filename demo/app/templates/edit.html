@@ -1,12 +1,21 @@
 <html>
-    <head>
-        <title>Edit</title>
-        <script src="javascript.js"></script> 
-        <script type="module" src="index.js"></script>
-        <meta charset="utf-8">
-        <meta content="IE=edge" http-equiv="X-UA-Compatible">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
+
+<head>
+    <title>Main</title>
+    <script src="javascript.js"></script> 
+    <script type="module" src="index.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            padding:6px 10px;
+            margin-top: 50px;
+            margin-left: 100px;
+        }
+
         #search-container {
             top: 50%;
             left: 50%;
@@ -35,19 +44,55 @@
         #search-container button:hover {
             background: #ccc;
         }
-        </style>
-    </head>
 
-    <body>
-        <h2>Edit a house</h2>
-        <form>
-            <input type="text" placeholder="House Name" name="name">
-            <input type="text" placeholder="House Price" name="price">
-            <input type="text" placeholder="House Latitude" name="latitude">
-            <input type="text" placeholder="House Longtitude" name="longtitude">
-            <input type="text" placeholder="District" name="district">
-            <button type="submit"><i class="fa fa-search">Submit Edit</i></button>
-            <button type="button" onclick="location.href='test.html'"><i class="fa fa-search">Cancel</i></button>
-        </form>
-    </body>
+        .result-table {
+            margin-top: 10px;
+            border-collapse: collapse;
+            width: 700px;
+        }
+
+        .result-table td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:hover {background-color: #D6EEEE;}
+    </style>
+</head>
+
+<body>
+    <div id="whole-page">
+        <header>
+            <div id="Search-edit" class="tabcontent">
+                <div id="overall-layer-edit">
+                    <nav>
+                        <!--TODO-->
+                    </nav>
+                    <div id="content-edit">
+                        <div id="search-container-edit">
+                            <form>
+                                <input type="text" placeholder="Search HomeId" name="search">
+                                <button type="button"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                        <div id="result-table-edit">
+                            <table class="result-table">
+                                <tr>
+                                    <th>HomeId</th>
+                                    <th>House Name</th>
+                                    <th>Price</th>
+                                    <th>Safety Score</th>
+                                    <th>District</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+
 </html>
