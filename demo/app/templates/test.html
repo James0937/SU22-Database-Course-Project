@@ -185,18 +185,7 @@
                                     <th>District</th>
                                     <td>
                                         <form>
-                                            <div id="checkboxes-3">
-                                                <label for="one">
-                                                    <input type="checkbox" id="one-2" />$0 - $75</label>
-                                                <label for="two">
-                                                    <input type="checkbox" id="two-2" />$75 - $150</label>
-                                                <label for="three">
-                                                    <input type="checkbox" id="three-2" />$150 - $225</label>
-                                                <label for="four">
-                                                    <input type="checkbox" id="four-2" />$225 - $300</label>
-                                                <label for="five">
-                                                    <input type="checkbox" id="five-2" />$300 or higher</label>
-                                            </div>
+                                            <input type="text" placeholder="Enter Chicago District" name="district", id="district-search">
                                         </form>
                                     </td>
                                 </tr>
@@ -229,6 +218,7 @@
             </div>
 
             <div id="Overview" class="tabcontent">
+                <button id="Refresh" type="button">Refresh</button>
                 <table class="result-table">
                     <thead>
                         <tr>
