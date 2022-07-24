@@ -76,7 +76,7 @@
                     <h1>Delete a house</h1>
                     <div id="search-container-delete">
                         <form>
-                            <input type="text" placeholder="Search houses in Chicago" name="search">
+                            <input type="text" placeholder="Search houses in Chicago" name="search" id="filter">
                             <button type="button"><i class="fa fa-search" onclick="searchClick()"></i></button>
                         </form>
                     </div>
@@ -90,6 +90,10 @@
                                 <th>District</th>
                                 <th>Delete</th>
                             </tr>
+
+                            <tbody id="tableBody">
+
+                            </tbody>
                             </table>
                     </div>
                     <div id="delete-button">
@@ -101,5 +105,9 @@
         </div>
     </div>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
 </html>
