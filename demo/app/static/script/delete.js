@@ -2,7 +2,7 @@ function searchClick() {
     console.log($('#filter').val());
     $.ajax({
         type: 'POST',
-        url: '/search',
+        url: '/search-delete',
         contentType: 'application/json;charset=UTF-8',
         data: JSON.stringify({
             'name': $('#filter').val()
@@ -30,14 +30,13 @@ function searchClick() {
                 price.innerHTML = query.price;
                 let district = row.insertCell(3);
                 district.innerHTML = query.district;
-                let safety_score = row.insertCell(4);
-                safety_score.innerHTML = query.safety_score;
             });
 
             // Insert checkboxes
             for (var i = 0, row; row = table.rows[i]; i++) {
                 var del = row.insertCell(-1);
-                del.innerHTML = `<input type="checkbox">`;
+                var home_id = row.cells[0].innerHTML;
+                del.innerHTML = `<input type="checkbox" id="${home_id}">`;
             }
             
         },
@@ -48,17 +47,25 @@ function searchClick() {
 }
 
 function deleteClick() {
+    var del_arr = [];
+    var table = document.getElementById("tableBody");
+    for (var i = 0, row; row = table.rows[i]; i++) {
+        var home_id = row.cells[0].innerHTML;
+        if (document.getElementById(home_id).checked == true) {
+            console.log(home_id);
+            del_arr.push(home_id);
+        }
+    }
+
     $.ajax({
         type: 'POST',
         url: '/delete',
         contentType: 'application/json;charset=UTF-8',
-        data: JSON.stringify({
-            'home_id': $('#name').val(),
-        }),
+        data: JSON.stringify(del_arr),
         success: function (res) {
             console.log(res.response);
             alert("Delete successfully.");
-            location.reload()
+            location.reload();
         },
         error: function () {
             console.log('Error');

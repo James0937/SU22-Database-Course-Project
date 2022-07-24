@@ -2,7 +2,7 @@ from app import db
 
 def search(name) -> dict:
     conn = db.connect()
-    query = "SELECT home_id, name, price, safety_score, neighborhood FROM Home NATURAL JOIN Neighborhood WHERE name LIKE '%%%%%s%%%%' ORDER BY safety_score DESC, price LIMIT 10;" % name
+    query = "SELECT home_id, name, price, safety_score, neighborhood FROM Home NATURAL JOIN Neighborhood WHERE name LIKE '%%%%%s%%%%' ORDER BY safety_score DESC, price;" % name
     query_results = conn.execute(query).fetchall()
     conn.close()
 
@@ -19,6 +19,24 @@ def search(name) -> dict:
 
     return res_list
 
+def search_delete(name) -> dict:
+    conn = db.connect()
+    query = "SELECT home_id, name, price, neighborhood FROM Home WHERE name LIKE '%%%%%s%%%%' ORDER BY price;" % name
+    query_results = conn.execute(query).fetchall()
+    conn.close()
+
+    res_list = []
+    for result in query_results:
+        item = {
+            "home_id": result[0],
+            "house_name": result[1],
+            "price": result[2],
+            "district": result[3]
+        }
+        res_list.append(item)
+
+    return res_list
+
 def add(data) -> int:
     conn = db.connect()
     home_id = conn.execute("SELECT MAX(home_id) FROM Home").fetchall()[0][0] + 1
@@ -27,8 +45,9 @@ def add(data) -> int:
     conn.close()
     return home_id
 
-def delete(data: int) -> None:
-	conn = db.connect()
-	query = "DELETE FROM Home WHERE home_id = {};".format(data)
-	conn.execute(query)
-	conn.close()
+def delete(data) -> None:
+    conn = db.connect()
+    for id in data:
+        query = "DELETE FROM Home WHERE home_id = {};".format(id)
+        conn.execute(query)
+    conn.close()

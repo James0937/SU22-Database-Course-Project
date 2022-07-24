@@ -26,6 +26,13 @@ def search():
     result = {'success': True, 'response': query_result}
     return jsonify(result)
 
+@app.route("/search-delete", methods = ['POST'])
+def search_delete():
+    data = request.get_json()
+    query_result = json.dumps(db.search_delete(data['name']))
+    result = {'success': True, 'response': query_result}
+    return jsonify(result)
+
 @app.route("/add", methods = ['POST'])
 def add():
     data = request.get_json()
@@ -37,7 +44,7 @@ def add():
 def delete():
     data = request.get_json()
     try:
-        db.delete(data['home_id'])
+        db.delete(data)
         result = {'success':True, 'response':'Removed task'}
     except:
         result = {'success':False, 'response':'Something went wrong'}
