@@ -33,6 +33,13 @@ def search_delete():
     result = {'success': True, 'response': query_result}
     return jsonify(result)
 
+@app.route("/search-edit", methods = ['POST'])
+def search_edit():
+    data = request.get_json()
+    query_result = json.dumps(db.search_edit(data['home_id']))
+    result = {'success': True, 'response': query_result}
+    return jsonify(result)
+
 @app.route("/add", methods = ['POST'])
 def add():
     data = request.get_json()

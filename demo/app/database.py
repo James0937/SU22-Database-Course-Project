@@ -37,6 +37,24 @@ def search_delete(name) -> dict:
 
     return res_list
 
+def search_edit(id) -> dict:
+    conn = db.connect()
+    query = "SELECT home_id, name, price, neighborhood FROM Home WHERE home_id = %s ORDER BY price;" % id
+    query_results = conn.execute(query).fetchall()
+    conn.close()
+
+    res_list = []
+    for result in query_results:
+        item = {
+            "home_id": result[0],
+            "house_name": result[1],
+            "price": result[2],
+            "district": result[3]
+        }
+        res_list.append(item)
+    
+    return res_list
+
 def add(data) -> int:
     conn = db.connect()
     home_id = conn.execute("SELECT MAX(home_id) FROM Home").fetchall()[0][0] + 1
