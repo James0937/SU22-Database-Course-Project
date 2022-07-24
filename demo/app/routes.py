@@ -15,6 +15,10 @@ def addpage():
 def editpage():
     return render_template("edit.html")
 
+@app.route("/delete.html")
+def deletepage():
+    return render_template("delete.html")
+
 @app.route("/search", methods = ['POST'])
 def search():
     data = request.get_json()

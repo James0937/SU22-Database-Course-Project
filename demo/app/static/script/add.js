@@ -1,4 +1,9 @@
 function addClick() {
+    if ($('#name').val() == "" || $('#price').val() == "" || $('#district').val() == "" || $('#latitude').val() == "" || $('#longtitude').val() == "") {
+        alert("Inputs must not be empty!");
+        return;
+    }
+    
     $.ajax({
         type: 'POST',
         url: '/add',
