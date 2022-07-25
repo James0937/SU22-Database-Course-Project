@@ -69,3 +69,10 @@ def delete(data) -> None:
         query = "DELETE FROM Home WHERE home_id = {};".format(id)
         conn.execute(query)
     conn.close()
+
+def edit(data) -> None:
+    conn = db.connect()
+    query = "UPDATE Home SET name = \"%s\" , price = %s, neighborhood = \"%s\" WHERE home_id = %s;" % (data['name'], data['price'], data['district'], data['home_id'])
+    print(query)
+    conn.execute(query)
+    conn.close()

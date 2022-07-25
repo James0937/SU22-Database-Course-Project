@@ -47,6 +47,13 @@ def add():
     result = {'success': True, 'response': home_id}
     return jsonify(result)
 
+@app.route("/edit", methods = ['POST'])
+def edit():
+    data = request.get_json()
+    db.edit(data)
+    result = {'success':True, 'response':'Success'}
+    return jsonify(result)
+
 @app.route("/delete", methods = ['POST'])
 def delete():
     data = request.get_json()

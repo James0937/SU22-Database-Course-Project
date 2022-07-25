@@ -25,29 +25,29 @@ function editClick() {
     const home_id = document.getElementById("HomeIdText").textContent;
     const house_name = document.getElementById("HouseNameText").value;
     const price = document.getElementById("PriceText").value;
-    const district = document.getElementById("DistrictText").valuet;
+    const district = document.getElementById("DistrictText").value;
     if (home_id == "" || house_name == "" || price == "" || district == "") {
         alert("Inputs must not be empty, or you have not found a valid home entity!");
         return;
     }
 
-    // $.ajax({
-    //     type: 'POST',
-    //     url: '/edit',
-    //     contentType: 'application/json;charset=UTF-8',
-    //     data: JSON.stringify({
-    //         'home_id': $('#name').val(),
-    //         'name': $('#name').val(),
-    //         'price': $('#price').val(),
-    //         'district': $('#district').val(),
-    //     }),
-    //     success: function (res) {
-    //         console.log(res.response);
-    //         alert("Edit successfully.");
-    //         location.reload()
-    //     },
-    //     error: function () {
-    //         console.log('Error');
-    //     }
-    // });
+    $.ajax({
+        type: 'POST',
+        url: '/edit',
+        contentType: 'application/json;charset=UTF-8',
+        data: JSON.stringify({
+            'home_id': home_id,
+            'name': house_name,
+            'price': price,
+            'district': district
+        }),
+        success: function (res) {
+            console.log(res.response);
+            alert("Edit successfully.");
+            location.reload()
+        },
+        error: function () {
+            console.log('Error');
+        }
+    });
 }
