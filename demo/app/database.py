@@ -1,3 +1,4 @@
+from typing import Dict
 from app import db
 
 def search(name) -> dict:
@@ -76,3 +77,20 @@ def edit(data) -> None:
     print(query)
     conn.execute(query)
     conn.close()
+
+def overview() -> dict:
+    conn = db.connect()
+    query = "SELECT neighborhood, range_name as price_range, COUNT(home_id) as total_homes FROM Home NATURAL JOIN Host NATURAL JOIN RoomType JOIN PriceRange pr ON (price >= pr.lower_bound AND price < pr.upper_bound) GROUP BY neighborhood, price_range ORDER BY neighborhood;"
+    query_results = conn.execute(query).fetchall()
+    conn.close()
+
+    res_list = []
+    for result in query_results:
+        item = {
+            "district": result[0],
+            "price_range": result[1],
+            "total_homes": result[2]
+        }
+        res_list.append(item)
+    
+    return res_list

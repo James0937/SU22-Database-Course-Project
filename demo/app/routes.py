@@ -63,3 +63,9 @@ def delete():
     except:
         result = {'success':False, 'response':'Something went wrong'}
     return jsonify(result)
+
+@app.route("/overview", methods = ['POST'])
+def overview():
+    query_result = json.dumps(db.overview())
+    result = {'success': True, 'response': query_result}
+    return jsonify(result)

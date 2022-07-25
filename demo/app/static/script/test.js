@@ -63,3 +63,35 @@ function searchClick() {
         }
     });
 }
+
+function overviewClick() {
+    $.ajax({
+        type: 'POST',
+        url: '/overview',
+        contentType: 'application/json;charset=UTF-8',
+        success: function (res) {
+            console.log(res.response);
+            const query_result = JSON.parse(res.response);
+            const table = document.getElementById("tableBody2");
+            
+            var tableRows = table.getElementsByTagName('tr');
+            var rowCount = tableRows.length;
+            for (var i = rowCount - 1; i >= 0; i--) {
+                table.removeChild(tableRows[i]);
+            }
+
+            query_result.map(query => {
+                let row = table.insertRow();
+                let district = row.insertCell(0);
+                district.innerHTML = query.district;
+                let price_range = row.insertCell(1);
+                price_range.innerHTML = query.price_range;
+                let total_homes = row.insertCell(2);
+                total_homes.innerHTML = query.total_homes;
+            });
+        },
+        error: function () {
+            console.log('Error');
+        }
+    });
+}
