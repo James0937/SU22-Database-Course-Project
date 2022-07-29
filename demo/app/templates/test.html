@@ -11,13 +11,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         header {
+            height: 55px;
+            width: 100%;
             padding: 10px;
-            border-top: 10px;
+            background-color: lightblue;
         }
+
+        .logo {
+            width:150px;
+            float:left;
+            margin-top: 0px;
+            display: inline;
+        }
+
         .tab {
             overflow: hidden;
-            border: 1px solid #ccc;
-            background-color: #f1f1f1;
+            display: inline;
         }
 
         .tab button {
@@ -29,14 +38,11 @@
             padding: 14px 16px;
             transition: 0.3s;
             font-size: 17px;
+            display: inline;
         }
 
         .tab button:hover {
-            background-color: #ddd;
-        }
-
-        .tab button:hover {
-            background-color: #ddd;
+            border-bottom: 2px solid rgb(38, 88, 255);
         }
 
         .tabcontent {
@@ -47,9 +53,7 @@
         }
 
         body {
-            padding:6px 10px;
-            margin-top: 50px;
-            margin-left: 100px;
+            border: none;
         }
 
         #search-container {
@@ -123,11 +127,15 @@
 <body>
     <div id="whole-page">
         <header>
+            <h2 class="logo">Airbnb
+                <span>Chicago</span>
+            </h2>
             <div class="tab">
                 <button class="tablinks" onclick="openTab(event, 'Search')">Search</button>
                 <button class="tablinks" onclick="openTab(event, 'Edit')">Edit</button>
                 <button class="tablinks" onclick="openTab(event, 'Overview')">Overview</button>
             </div>
+        </header>
             
             <div id="Search" class="tabcontent">
                 <div id="overall-layer">
@@ -233,7 +241,6 @@
                     </tbody>
                 </table>
             </div>
-        </header>
     </div>
 </body>
 
