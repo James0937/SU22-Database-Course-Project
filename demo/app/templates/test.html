@@ -55,8 +55,12 @@
         body {
             border: none;
         }
+        
+        #overall_table tr,td{
+            vertical-align: top;
+        }
 
-        #overall-layer {
+        #content {
             width: 500px;
             display: inline;
         }
@@ -77,6 +81,8 @@
         }
         
         #search-container button {
+            height: 60px;
+            width: 60px;
             float: inherit;
             padding: 6px 10px;
             margin-top: 8px;
@@ -100,6 +106,8 @@
             width:100px;
         }
 
+        .filter-table tr:hover {background-color: #D6EEEE;}
+
         .result-table {
             margin-top: 10px;
             border-collapse: collapse;
@@ -112,13 +120,12 @@
             padding: 8px;
         }
 
-        tr:hover {background-color: #D6EEEE;}
+        .result-table tr:hover {background-color: #D6EEEE;}
 
         #map {
             margin-top: 10px;
-            position:relative;
             height: 400px;
-            width: 30%;
+            width: 400px;
             float: right;
             display: inline;
         }
@@ -147,84 +154,89 @@
             
         <div id="Search" class="tabcontent">
             <div id="overall-layer">
-                <div id="content">
-                    <div id="contentwomap">
-                        <div id="search-container">
-                            <form>
-                                <input type="text" placeholder="Search houses in Chicago" name="search" id="filter">
-                                <button type="button"><i class="fa fa-search" onclick="searchClick()"></i></button>
-                            </form>
-                        </div>
-                        <div>
-                            <table class="filter-table">
-                                <tr>
-                                    <th>Safety Score Range</th>
-                                    <td>
-                                        <form>
-                                            <div id="checkboxes-1">
-                                                <label for="one">
-                                                    <input type="checkbox" id="one-1" />90 or higher</label>
-                                                <label for="two">
-                                                    <input type="checkbox" id="two-1" />80 - 90</label>
-                                                <label for="three">
-                                                    <input type="checkbox" id="three-1" />70 - 80</label>
-                                                <label for="four">
-                                                    <input type="checkbox" id="four-2" />60 - 70</label>
-                                                <label for="five">
-                                                    <input type="checkbox" id="five-2" />60 or lower</label>
-                                            </div>
-                                        </form>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Price Range</th>
-                                    <td>
-                                        <form>
-                                            <div id="checkboxes-2">
-                                                <label for="one">
-                                                    <input type="checkbox" id="one-2" />$0 - $75</label>
-                                                <label for="two">
-                                                    <input type="checkbox" id="two-2" />$75 - $150</label>
-                                                <label for="three">
-                                                    <input type="checkbox" id="three-2" />$150 - $225</label>
-                                                <label for="four">
-                                                    <input type="checkbox" id="four-2" />$225 - $300</label>
-                                                <label for="five">
-                                                    <input type="checkbox" id="five-2" />$300 or higher</label>
-                                            </div>
-                                        </form>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>District</th>
-                                    <td>
-                                        <form>
-                                            <input type="text" placeholder="Enter Chicago District" name="district" id="district-search">
-                                        </form>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div id="result-table">
-                            <table class="result-table">
-                                <thead>
-                                    <tr>
-                                    <th>House Name</th>
-                                    <th>Price</th>
-                                    <th>Safety Score</th>
-                                    <th>District</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tableBody">
-    
-                                </tbody>
-                                </table>
-                        </div>
-                    </div>
-                    
-                    <div id="map"></div>
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
-                </div>
+                <table id="overall-table">
+                    <tr>
+                        <td>
+                            <div id="contentwomap">
+                                <div id="search-container">
+                                    <form>
+                                        <input type="text" placeholder="Search houses in Chicago" name="search" id="filter">
+                                        <button type="button"><i class="fa fa-search" onclick="searchClick()"></i></button>
+                                    </form>
+                                </div>
+                                <div>
+                                    <table class="filter-table">
+                                        <tr>
+                                            <th>Safety Score Range</th>
+                                            <td>
+                                                <form>
+                                                    <div id="checkboxes-1">
+                                                        <label for="one">
+                                                            <input type="checkbox" id="one-1" />90 or higher</label>
+                                                        <label for="two">
+                                                            <input type="checkbox" id="two-1" />80 - 90</label>
+                                                        <label for="three">
+                                                            <input type="checkbox" id="three-1" />70 - 80</label>
+                                                        <label for="four">
+                                                            <input type="checkbox" id="four-2" />60 - 70</label>
+                                                        <label for="five">
+                                                            <input type="checkbox" id="five-2" />60 or lower</label>
+                                                    </div>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Price Range</th>
+                                            <td>
+                                                <form>
+                                                    <div id="checkboxes-2">
+                                                        <label for="one">
+                                                            <input type="checkbox" id="one-2" />$0 - $75</label>
+                                                        <label for="two">
+                                                            <input type="checkbox" id="two-2" />$75 - $150</label>
+                                                        <label for="three">
+                                                            <input type="checkbox" id="three-2" />$150 - $225</label>
+                                                        <label for="four">
+                                                            <input type="checkbox" id="four-2" />$225 - $300</label>
+                                                        <label for="five">
+                                                            <input type="checkbox" id="five-2" />$300 or higher</label>
+                                                    </div>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>District</th>
+                                            <td>
+                                                <form>
+                                                    <input type="text" placeholder="Enter Chicago District" name="district" id="district-search">
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div id="result-table">
+                                    <table class="result-table">
+                                        <thead>
+                                            <tr>
+                                            <th>House Name</th>
+                                            <th>Price</th>
+                                            <th>Safety Score</th>
+                                            <th>District</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableBody">
+            
+                                        </tbody>
+                                        </table>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="map"></div>
+                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
         
