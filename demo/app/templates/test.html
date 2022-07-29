@@ -11,14 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         header {
-            height: 55px;
+            height: 60px;
             width: 100%;
             padding: 10px;
             background-color: lightblue;
         }
 
         .logo {
-            width:150px;
+            width: 150px;
             float:left;
             margin-top: 0px;
             display: inline;
@@ -48,12 +48,17 @@
         .tabcontent {
             display: none;
             padding: 6px 12px;
-            border: 1px solid #ccc;
+            border: none;
             border-top: none;
         }
 
         body {
             border: none;
+        }
+
+        #overall-layer {
+            width: 500px;
+            display: inline;
         }
 
         #search-container {
@@ -62,6 +67,7 @@
         }
         
         #search-container input[type=text] {
+            left: 0px;
             width: 500px;
             height: 60px;
             padding: 6px;
@@ -113,6 +119,8 @@
             position:relative;
             height: 400px;
             width: 30%;
+            float: right;
+            display: inline;
         }
         
         @media (max-width: 600px) {
@@ -137,15 +145,13 @@
             </div>
         </header>
             
-            <div id="Search" class="tabcontent">
-                <div id="overall-layer">
-                    <nav>
-                        <!--TODO-->
-                    </nav>
-                    <div id="content">
+        <div id="Search" class="tabcontent">
+            <div id="overall-layer">
+                <div id="content">
+                    <div id="contentwomap">
                         <div id="search-container">
                             <form>
-                                <input type="text" placeholder="Search houses in Chicago" name="search", id="filter">
+                                <input type="text" placeholder="Search houses in Chicago" name="search" id="filter">
                                 <button type="button"><i class="fa fa-search" onclick="searchClick()"></i></button>
                             </form>
                         </div>
@@ -210,37 +216,39 @@
                                     </tr>
                                 </thead>
                                 <tbody id="tableBody">
-
+    
                                 </tbody>
-                              </table>
+                                </table>
                         </div>
-                        <div id="map"></div>
-                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
                     </div>
+                    
+                    <div id="map"></div>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
                 </div>
             </div>
-            
-            <div id="Edit" class="tabcontent">
-                <button id="Add" onclick="location.href='add.html'" type="button">Add a house</button>
-                <button id="Edit" onclick="location.href='edit.html'" type="button">Edit a house</button>
-                <button id="Delete" onclick="location.href='delete.html'" type="button">Delete a house</button>
-            </div>
+        </div>
+        
+        <div id="Edit" class="tabcontent">
+            <button id="Add" onclick="location.href='add.html'" type="button">Add a house</button>
+            <button id="Edit" onclick="location.href='edit.html'" type="button">Edit a house</button>
+            <button id="Delete" onclick="location.href='delete.html'" type="button">Delete a house</button>
+        </div>
 
-            <div id="Overview" class="tabcontent">
-                <button id="Refresh" type="button" onclick="overviewClick()">Refresh</button>
-                <table class="result-table">
-                    <thead>
-                        <tr>
-                            <th>District</th>
-                            <th>Price Range</th>
-                            <th>Total Homes</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody2">
+        <div id="Overview" class="tabcontent">
+            <button id="Refresh" type="button" onclick="overviewClick()">Refresh</button>
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>District</th>
+                        <th>Price Range</th>
+                        <th>Total Homes</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody2">
 
-                    </tbody>
-                </table>
-            </div>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 
