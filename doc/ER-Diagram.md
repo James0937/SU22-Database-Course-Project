@@ -1,7 +1,7 @@
 # Team-023 CDGW ER Diagram
 
 ## Entity-Relationship Diagram
-![CDGW drawio](https://user-images.githubusercontent.com/107632673/177460701-dc38e4bf-6ef7-45a5-9eaa-8411ab6084b3.png)
+![CDGW](https://user-images.githubusercontent.com/107632673/181870817-d0000c69-da06-447c-b853-4627174d04c9.jpg)
 
 
 ## Assumptions:
@@ -56,7 +56,7 @@ host_name: VARCHAR(50)
 );
 
 Neighborhood (
-neighborhood: VARCHAR(255) [PK],
+neighborhood: VARCHAR(255) [PK] [FK to SurroundingInformation.neighborhood],
 safety_score: INT
 );
 
