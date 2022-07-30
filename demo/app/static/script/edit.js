@@ -42,12 +42,18 @@ function editClick() {
             'district': district
         }),
         success: function (res) {
+            if (res.success == false) {
+                alert(res.response);
+                return;
+            }
             console.log(res.response);
+            
             alert("Edit successfully.");
             location.reload()
         },
         error: function () {
             console.log('Error');
+            alert(res.response);
         }
     });
 }

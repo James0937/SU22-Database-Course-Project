@@ -43,15 +43,21 @@ def search_edit():
 @app.route("/add", methods = ['POST'])
 def add():
     data = request.get_json()
-    home_id = db.add(data)
-    result = {'success': True, 'response': home_id}
+    try:
+        home_id = db.add(data)
+        result = {'success':True, 'response':home_id}
+    except:
+        result = {'success':False, 'response':'Please make sure that the coordinate and district of your input is within Chicago!'}
     return jsonify(result)
 
 @app.route("/edit", methods = ['POST'])
 def edit():
     data = request.get_json()
-    db.edit(data)
-    result = {'success':True, 'response':'Success'}
+    try:
+        db.edit(data)
+        result = {'success':True, 'response':'Success'}
+    except:
+        result = {'success':False, 'response':'Please make sure that the coordinate and district of your input is within Chicago!'}
     return jsonify(result)
 
 @app.route("/delete", methods = ['POST'])
@@ -59,9 +65,9 @@ def delete():
     data = request.get_json()
     try:
         db.delete(data)
-        result = {'success':True, 'response':'Removed task'}
+        result = {'success':True, 'response':'Successfully removed.'}
     except:
-        result = {'success':False, 'response':'Something went wrong'}
+        result = {'success':False, 'response':'Something went wrong.'}
     return jsonify(result)
 
 @app.route("/overview", methods = ['POST'])

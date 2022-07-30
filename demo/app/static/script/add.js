@@ -16,7 +16,12 @@ function addClick() {
             'longtitude': $('#longtitude').val()
         }),
         success: function (res) {
+            if (res.success == false) {
+                alert(res.response);
+                return;
+            }
             console.log(res.response);
+            
             alert("Add successfully, assigned home_id with " + res.response);
             location.reload()
         },
