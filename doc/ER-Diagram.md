@@ -1,7 +1,7 @@
 # Team-023 CDGW ER Diagram
 
 ## Entity-Relationship Diagram
-![CDGW](https://user-images.githubusercontent.com/107632673/181870817-d0000c69-da06-447c-b853-4627174d04c9.jpg)
+![CDGW](https://user-images.githubusercontent.com/107632673/181870992-cdf403eb-7822-4c7a-80bc-382532316664.jpg)
 
 
 ## Assumptions:
