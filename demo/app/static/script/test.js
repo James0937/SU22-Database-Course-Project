@@ -48,16 +48,46 @@ function searchClick() {
                 house_name.innerHTML = query.house_name;
                 let price = row.insertCell(1);
                 price.innerHTML = query.price;
-                let district = row.insertCell(2);
-                district.innerHTML = query.district;
-                let safety_score = row.insertCell(3);
+                let safety_score = row.insertCell(2);
                 safety_score.innerHTML = query.safety_score;
+                let district = row.insertCell(3);
+                district.innerHTML = query.district;
             });
+
+            setMarkers(query_result);
         },
         error: function () {
             console.log('Error');
         }
     });
+}
+
+function setMarkers(query_result) {
+    const chicago = { lat: 41.867258, lng: -87.639156 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 10,
+        center: chicago,
+    });
+
+    const infoWindow = new google.maps.InfoWindow();
+
+    for (let i = 0; i < query_result.length; i++) {
+        const home = query_result[i];
+
+        const marker = new google.maps.Marker({
+            position: { lat: home['latitude'], lng: home['longtitude'] },
+            map,
+            title: home['house_name'],
+            zIndex: home['home_id'],
+            customInfo: " | District: " + home["district"] + " | Price: " + home["price"],
+        });
+
+        marker.addListener("click", () => {
+            infoWindow.close();
+            infoWindow.setContent("Name: " + marker.getTitle() + marker.customInfo);
+            infoWindow.open(marker.getMap(), marker);
+        });
+    }
 }
 
 function overviewClick() {

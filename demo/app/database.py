@@ -3,7 +3,7 @@ from app import db
 
 def search(name) -> dict:
     conn = db.connect()
-    query = "SELECT home_id, name, price, safety_score, neighborhood FROM Home NATURAL JOIN Neighborhood WHERE name LIKE '%%%%%s%%%%' ORDER BY safety_score DESC, price;" % name
+    query = "SELECT home_id, name, price, safety_score, neighborhood, latitude, longtitude FROM Home NATURAL JOIN Neighborhood WHERE name LIKE '%%%%%s%%%%' ORDER BY safety_score DESC, price;" % name
     query_results = conn.execute(query).fetchall()
     conn.close()
 
@@ -13,8 +13,10 @@ def search(name) -> dict:
             "home_id": result[0],
             "house_name": result[1],
             "price": result[2],
-            "safety_score": result[4],
-            "district": result[3]
+            "safety_score": result[3],
+            "district": result[4],
+            "latitude": result[5],
+            "longtitude": result[6]
         }
         res_list.append(item)
 
