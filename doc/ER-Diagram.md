@@ -1,7 +1,7 @@
 # Team-023 CDGW ER Diagram
 
 ## Entity-Relationship Diagram
-![CDGW](https://user-images.githubusercontent.com/107632673/181870992-cdf403eb-7822-4c7a-80bc-382532316664.jpg)
+![CDGW](https://user-images.githubusercontent.com/107632673/181871179-4441036b-9ce8-41c5-ba6a-ae324eb6dcb2.jpg)
 
 
 ## Assumptions:
@@ -33,7 +33,7 @@ This entity works as a table of reference for the range of the price (per night)
 
 ### Surrounding Information
 
-This entity contains additional information about each district, such as avaliable restaurants or hospitals in the district. We plan to JOIN it with the main table ON same neighborhood name to link these information. 
+This entity contains additional information about each district, such as avaliable restaurants or hospitals in the district. We plan to JOIN it with the main table ON same neighborhood name to link these information. It should be noticed that we cannot ensure that there exists homes in every neighborhood. As a result, every attribute in surrounding information could corresponds to one or less neighborhood in the Neighborhood Table.
 
 ## Relational Schema:
 ```
