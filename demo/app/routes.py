@@ -75,3 +75,14 @@ def overview():
     query_result = json.dumps(db.overview())
     result = {'success': True, 'response': query_result}
     return jsonify(result)
+
+@app.route("/procedure", methods = ['POST'])
+def procedure():
+    data = request.get_json()
+    try:
+        query_result = json.dumps(db.procedure(data['district']))
+        result = {'success': True, 'response': query_result}
+        return jsonify(result)
+    except:
+        result = {'success': False, 'response': "Please enter a valid district!"}
+        return jsonify(result)

@@ -125,3 +125,24 @@ def overview() -> dict:
         res_list.append(item)
     
     return res_list
+
+def procedure(district) -> dict:
+    conn = db.connect()
+    command = "CALL Airbnb.DistrictResearch('%s');" % district
+    procedure_results = conn.execute(command).fetchall()
+    conn.close()
+
+    res_list = []
+
+    if len(procedure_results) != 2:
+        raise ValueError('District Not Found')
+
+    for result in procedure_results:
+        item = {
+            "home_name": result[2],
+            "host_name": result[8],
+            "price": result[3]
+        }
+        res_list.append(item)
+    
+    return res_list

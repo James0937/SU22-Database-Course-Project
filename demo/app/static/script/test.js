@@ -145,3 +145,27 @@ function overviewClick() {
         }
     });
 }
+
+function procedureClick() {
+    $.ajax({
+        type: 'POST',
+        url: '/procedure',
+        data: JSON.stringify({
+            'district': $('#district-p-filter').val()
+        }),
+        contentType: 'application/json;charset=UTF-8',
+        success: function (res) {
+            console.log(res.response);
+            if (res.success == false) {
+                alert(res.response);
+                return;
+            }
+
+            const query_result = JSON.parse(res.response);
+            alert("The most expensive house is '" + query_result[0]['home_name'] + "', its host is " + query_result[0]['host_name'] + " with price " + query_result[0]['price'] + ". The cheapest house is '" + query_result[1]['home_name'] + "', its host is " + query_result[1]['host_name'] + " with price " + query_result[1]['price'] + ".");
+        },
+        error: function () {
+            console.log('Error');
+        }
+    });
+}

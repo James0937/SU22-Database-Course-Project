@@ -7,10 +7,3 @@ env_variables:
     MYSQL_PASSWORD: ''
     MYSQL_DB: 'Airbnb'
     MYSQL_HOST: '34.133.97.105'
-
-handlers:
--url: /script
-static_dir: static/script
-
--url: /styles
-static_dir: static/styles
