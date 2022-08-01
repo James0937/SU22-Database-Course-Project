@@ -5,6 +5,7 @@ def search(data) -> dict:
     name = data['name']
     tags_ss = data['tags_ss']
     tags_pr = data['tags_pr']
+    district = data['district']
 
     tags_ss_query = ""
     if len(tags_ss) >= 1:
@@ -31,8 +32,7 @@ def search(data) -> dict:
         tags_pr_query += ")"
 
     conn = db.connect()
-    query = "SELECT home_id, name, price, safety_score, neighborhood, latitude, longtitude, range_name FROM Home NATURAL JOIN Neighborhood JOIN PriceRange pr ON (price >= pr.lower_bound AND price < pr.upper_bound) WHERE name LIKE '%%%%%s%%%%' %s %s ORDER BY safety_score DESC, price;" % (name, tags_ss_query, tags_pr_query)
-    print(query)
+    query = "SELECT home_id, name, price, safety_score, neighborhood, latitude, longtitude, range_name FROM Home NATURAL JOIN Neighborhood JOIN PriceRange pr ON (price >= pr.lower_bound AND price < pr.upper_bound) WHERE name LIKE '%%%%%s%%%%' %s %s AND neighborhood LIKE '%%%%%s%%%%' ORDER BY safety_score DESC, price;" % (name, tags_ss_query, tags_pr_query, district)
     query_results = conn.execute(query).fetchall()
     conn.close()
 

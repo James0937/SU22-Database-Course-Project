@@ -52,7 +52,8 @@ function searchClick() {
         data: JSON.stringify({
             'name': $('#filter').val(),
             'tags_ss': tag_ss_arr,
-            'tags_pr': tag_pr_arr
+            'tags_pr': tag_pr_arr,
+            'district': $('#district-search').val()
         }),
         success: function (res) {
             console.log(res.response);
