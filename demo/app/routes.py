@@ -22,7 +22,7 @@ def deletepage():
 @app.route("/search", methods = ['POST'])
 def search():
     data = request.get_json()
-    query_result = json.dumps(db.search(data['name']))
+    query_result = json.dumps(db.search(data))
     result = {'success': True, 'response': query_result}
     return jsonify(result)
 

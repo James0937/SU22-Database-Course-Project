@@ -1,9 +1,38 @@
 from typing import Dict
 from app import db
 
-def search(name) -> dict:
+def search(data) -> dict:
+    name = data['name']
+    tags_ss = data['tags_ss']
+    tags_pr = data['tags_pr']
+
+    tags_ss_query = ""
+    if len(tags_ss) >= 1:
+        count = 1
+        for i in tags_ss:
+            if count == 1:
+                tags_ss_query += " AND ("
+                count += 1
+            else:
+                tags_ss_query += " OR "
+            tags_ss_query += i
+        tags_ss_query += ")"
+
+    tags_pr_query = ""
+    if len(tags_pr) >= 1:
+        count = 1
+        for i in tags_pr:
+            if count == 1:
+                tags_pr_query += " AND ("
+                count += 1
+            else:
+                tags_pr_query += " OR "
+            tags_pr_query += i
+        tags_pr_query += ")"
+
     conn = db.connect()
-    query = "SELECT home_id, name, price, safety_score, neighborhood, latitude, longtitude FROM Home NATURAL JOIN Neighborhood WHERE name LIKE '%%%%%s%%%%' ORDER BY safety_score DESC, price;" % name
+    query = "SELECT home_id, name, price, safety_score, neighborhood, latitude, longtitude, range_name FROM Home NATURAL JOIN Neighborhood JOIN PriceRange pr ON (price >= pr.lower_bound AND price < pr.upper_bound) WHERE name LIKE '%%%%%s%%%%' %s %s ORDER BY safety_score DESC, price;" % (name, tags_ss_query, tags_pr_query)
+    print(query)
     query_results = conn.execute(query).fetchall()
     conn.close()
 

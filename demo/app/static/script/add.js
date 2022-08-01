@@ -21,7 +21,6 @@ function addClick() {
                 return;
             }
             console.log(res.response);
-            
             alert("Add successfully, assigned home_id with " + res.response);
             location.reload()
         },

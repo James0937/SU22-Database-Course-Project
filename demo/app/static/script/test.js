@@ -24,12 +24,35 @@ function openTab(evt, tabName) {
 
 function searchClick() {
     console.log($('#filter').val());
+
+    // Add tags to a list
+    var tag_ss_arr = [];
+    var tag_pr_arr = [];
+    $("input[type='checkbox'][id^='ss']").each(function(){ // Safety Score
+        var name = $(this).prop("name");
+        var ischecked = $(this).is(":checked");
+        if (ischecked) {
+            tag_ss_arr.push(name);
+        }
+    });
+    $("input[type='checkbox'][id^='pr']").each(function(){ // Price Range
+        var name = $(this).prop("name");
+        var ischecked = $(this).is(":checked");
+        if (ischecked) {
+            tag_pr_arr.push(name);
+        }
+    });
+    console.log(tag_ss_arr);
+    console.log(tag_pr_arr);
+
     $.ajax({
         type: 'POST',
         url: '/search',
         contentType: 'application/json;charset=UTF-8',
         data: JSON.stringify({
-            'name': $('#filter').val()
+            'name': $('#filter').val(),
+            'tags_ss': tag_ss_arr,
+            'tags_pr': tag_pr_arr
         }),
         success: function (res) {
             console.log(res.response);
