@@ -56,8 +56,13 @@
             border: none;
         }
         
-        .overall_table tr,td{
+        .overall_table tr,td {
             vertical-align: top;
+        }
+
+        #overview_table {
+            table-layout: auto;
+            width: 300px;
         }
 
         #content {
@@ -100,7 +105,7 @@
         #search-container-procedure input[type=text] {
             left: 0px;
             width: 300px;
-            height: 60px;
+            height: 43px;
             padding: 6px;
             margin-top: 8px;
             font-size: 20px;
@@ -314,7 +319,7 @@
         </div>
 
         <div id="Overview" class="tabcontent">
-            <table class="overall_table">
+            <table class="overall_table" id="overview_table">
                 <tr>
                     <td>
                         <div id="search-container-procedure">
@@ -337,8 +342,8 @@
                             </tbody>
                         </table>
                     </td>
-                    <td>
-                        <span>image</span>
+                    <td width="300px">
+                        <img src="../../../data/Chicago-Neighborhood-Guide-Map-of-Chicago-Neighborhoods-with-Real-Estate-Listings-Best-Chicago-Properties-LLC.jpeg" alt="Chicago Neighborhood Map">
                     </td>
                 </tr>
             </table>
