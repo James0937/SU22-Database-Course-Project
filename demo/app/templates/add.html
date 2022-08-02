@@ -6,48 +6,59 @@
         <meta content="IE=edge" http-equiv="X-UA-Compatible">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
-        #search-container {
-            top: 50%;
-            left: 50%;
-        }
-        
-        #search-container input[type=text] {
-            width: 500px;
+        header {
             height: 60px;
-            padding: 6px;
-            margin-top: 8px;
-            font-size: 20px;
-            border-color: black;
+            width: 100%;
+            padding: 10px;
+            background-color: lightblue;
         }
-        
-        #search-container button {
-            float: inherit;
-            padding: 6px 10px;
-            margin-top: 8px;
-            margin-right: 16px;
-            background: #ddd;
-            font-size: 17px;
-            border: none;
-            cursor: pointer;
+
+        .logo {
+            width: 150px;
+            float:left;
+            margin-top: 0px;
+            display: inline;
         }
-        
-        #search-container button:hover {
-            background: #ccc;
+
+        .input_box {
+            display:block;
+        }
+
+        .submit_button {
+            border-radius: 4px;
+            margin-top: 10px;
+            margin-right: 10px;
+            font-size: 12px;
+            padding-top: 10px;
+            background-color: lightblue;
+            padding: 3px;
         }
         </style>
     </head>
 
     <body>
-        <h1>Add a house</h1>
-        <form>
-            <input type="text" placeholder="House Name" id="name">
-            <input type="text" placeholder="House Price" id="price">
-            <input type="text" placeholder="House Latitude" id="latitude">
-            <input type="text" placeholder="House Longtitude" id="longtitude">
-            <input type="text" placeholder="District" id="district">
-            <button type="button"><i class="fa fa-search" onclick="addClick()">Submit Add</i></button>
-            <button type="button" onclick="location.href='/'"><i class="fa fa-search">Cancel</i></button>
-        </form>
+        <header>
+            <h2 class="logo">Airbnb
+                <span>Chicago</span>
+            </h2>
+        </header>
+        <div id="overall">
+            <h1>Add a house</h1>
+            <form>
+                <p>House name</p>
+                <input class="input_box" type="text" placeholder="House Name" id="name">
+                <p>House price</p>
+                <input class="input_box" type="text" placeholder="House Price" id="price">
+                <p>Latitude</p>
+                <input class="input_box" type="text" placeholder="House Latitude" id="latitude">
+                <p>Longtitude</p>
+                <input class="input_box" type="text" placeholder="House Longtitude" id="longtitude">
+                <p>House name</p>
+                <input class="input_box" type="text" placeholder="District" id="district">
+                <button class="submit_button" type="button"><i class="fa fa-search" onclick="addClick()">Submit Add</i></button>
+                <button class="submit_button" type="button" onclick="location.href='/'"><i class="fa fa-search">Cancel</i></button>
+            </form>
+        </div>
     </body>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

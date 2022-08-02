@@ -56,7 +56,7 @@
             border: none;
         }
         
-        #overall_table tr,td{
+        .overall_table tr,td{
             vertical-align: top;
         }
 
@@ -95,6 +95,46 @@
         
         #search-container button:hover {
             background: #ccc;
+        }
+
+        #search-container-procedure input[type=text] {
+            left: 0px;
+            width: 300px;
+            height: 60px;
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 20px;
+            border-color: black;
+        }
+        
+        #Search-button-procedure {
+            height: 60px;
+            width: 60px;
+            float: inherit;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        #search-container-procedure button:hover {
+            background: #ccc;
+        }
+
+        #Refresh {
+            height: 60px;
+            width: 100px;
+            float: right;
+            margin-top: 16px;
+            padding: 6px 10px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
         }
 
         .filter-table {
@@ -136,6 +176,29 @@
                 flex-direction: column;
             }
         }
+
+        #warning_sign {
+            background-color: lightcoral;
+            padding: 6px;
+            font-size: large;
+        }
+
+        #warning_icon {
+            color: yellow;
+            content: "\26A0";
+        }
+
+        #Overview {
+            display:block;
+        }
+
+        .edit_button {
+            border-radius: 4px;
+            font-size: 15px;
+            background-color: lightblue;
+            padding: 3px;
+            display:inline;
+        }
     </style>
 </head>
 
@@ -154,7 +217,7 @@
             
         <div id="Search" class="tabcontent">
             <div id="overall-layer">
-                <table id="overall-table">
+                <table class="overall-table">
                     <tr>
                         <td>
                             <div id="contentwomap">
@@ -241,30 +304,43 @@
         </div>
         
         <div id="Edit" class="tabcontent">
-            <button id="Add" onclick="location.href='add.html'" type="button">Add a house</button>
-            <button id="Edit" onclick="location.href='edit.html'" type="button">Edit a house</button>
-            <button id="Delete" onclick="location.href='delete.html'" type="button">Delete a house</button>
+            <h3 id="warning_sign">
+                <span id="warning_icon">&#9888;</span>
+                Warning: Please do not use any button on this page if you are not a superuser.
+            </h3>
+            <button id="Add" onclick="location.href='add.html'" type="button" class="edit_button">Add a house</button>
+            <button id="Edit" onclick="location.href='edit.html'" type="button" class="edit_button">Edit a house</button>
+            <button id="Delete" onclick="location.href='delete.html'" type="button" class="edit_button">Delete a house</button>
         </div>
 
         <div id="Overview" class="tabcontent">
-            <div id="search-container-procedure">
-                <form>
-                    <input type="text" placeholder="Enter Chicago district" id="district-p-filter">
-                    <button type="button"><i class="fa fa-search" onclick="procedureClick()"></i></button>
-                </form>
-            </div>
-            <button id="Refresh" type="button" onclick="overviewClick()">Refresh</button>
-            <table class="result-table">
-                <thead>
-                    <tr>
-                        <th>District</th>
-                        <th>Price Range</th>
-                        <th>Total Homes</th>
-                    </tr>
-                </thead>
-                <tbody id="tableBody2">
-
-                </tbody>
+            <table class="overall_table">
+                <tr>
+                    <td>
+                        <div id="search-container-procedure">
+                            <form>
+                                <input type="text" placeholder="Enter Chicago district" id="district-p-filter">
+                                <button id="Search-button-procedure" type="button"><i class="fa fa-search" onclick="procedureClick()"></i></button>
+                                <button id="Refresh" type="button" onclick="overviewClick()">Refresh</button>
+                            </form>
+                        </div>
+                        <table class="result-table">
+                            <thead>
+                                <tr>
+                                    <th>District</th>
+                                    <th>Price Range</th>
+                                    <th>Total Homes</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody2">
+            
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>
+                        <span>image</span>
+                    </td>
+                </tr>
             </table>
         </div>
     </div>

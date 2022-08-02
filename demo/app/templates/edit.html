@@ -10,10 +10,18 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        body {
-            padding:6px 10px;
-            margin-top: 50px;
-            margin-left: 100px;
+        header {
+            height: 60px;
+            width: 100%;
+            padding: 10px;
+            background-color: lightblue;
+        }
+
+        .logo {
+            width: 150px;
+            float:left;
+            margin-top: 0px;
+            display: inline;
         }
 
         #search-container {
@@ -58,48 +66,61 @@
         }
 
         tr:hover {background-color: #D6EEEE;}
+
+        .submit_button {
+            border-radius: 4px;
+            margin-top: 10px;
+            margin-right: 10px;
+            font-size: 12px;
+            padding-top: 10px;
+            background-color: lightblue;
+            padding: 3px;
+        }
     </style>
 </head>
 
 <body>
+    <header>
+        <h2 class="logo">Airbnb
+            <span>Chicago</span>
+        </h2>
+    </header>
     <div id="whole-page">
-        <header>
-            <div id="Search-edit" class="tabcontent">
-                <div id="overall-layer-edit">
-                    <nav>
-                        <!--TODO-->
-                    </nav>
-                    <div id="content-edit">
-                        <h1>Edit a house</h1>
-                        <div id="search-container-edit">
-                            <form>
-                                <input type="text" placeholder="Search HomeId" id="filter">
-                                <button type="button"><i class="fa fa-search" onclick="searchClick()"></i></button>
-                            </form>
-                        </div>
-                        <div id="result-table-edit">
-                            <table class="result-table">
-                                <tr>
-                                    <th>HomeId</th>
-                                    <th>House Name</th>
-                                    <th>Price</th>
-                                    <th>District</th>
-                                    <th>Edit</th>
-                                </tr>
-                                <tr>
-                                    <th id="HomeIdText"></th>
-                                    <th><input type="text" id="HouseNameText"></th>
-                                    <th><input type="text" id="PriceText"></th>
-                                    <th><input type="text" id="DistrictText"></th>
-                                    <th><button type="button" onclick="editClick()">Edit</button></th>
-                                </tr>
-                            </table>
-                        </div>
-                        <button type="button" onclick="location.href='/'">Cancel</button>
+        <div id="Search-edit" class="tabcontent">
+            <div id="overall-layer-edit">
+                <nav>
+                    <!--TODO-->
+                </nav>
+                <div id="content-edit">
+                    <h1>Edit a house</h1>
+                    <div id="search-container-edit">
+                        <form>
+                            <input type="text" placeholder="Search HomeId" id="filter">
+                            <button type="button"><i class="fa fa-search" onclick="searchClick()"></i></button>
+                        </form>
                     </div>
+                    <div id="result-table-edit">
+                        <table class="result-table">
+                            <tr>
+                                <th>HomeId</th>
+                                <th>House Name</th>
+                                <th>Price</th>
+                                <th>District</th>
+                                <th>Edit</th>
+                            </tr>
+                            <tr>
+                                <th id="HomeIdText"></th>
+                                <th><input type="text" id="HouseNameText"></th>
+                                <th><input type="text" id="PriceText"></th>
+                                <th><input type="text" id="DistrictText"></th>
+                                <th><button type="button" onclick="editClick()">Edit</button></th>
+                            </tr>
+                        </table>
+                    </div>
+                    <button class="submit_button" type="button" onclick="location.href='/'">Cancel</button>
                 </div>
             </div>
-        </header>
+        </div>
     </div>
 </body>
 
