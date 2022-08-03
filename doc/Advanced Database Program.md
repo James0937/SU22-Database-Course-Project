@@ -3,7 +3,7 @@
 CREATE DEFINER=`root`@`%` PROCEDURE `DistrictResearch`(IN IN_Neighborhood VARCHAR(255))
 BEGIN
 	DECLARE currHomeID INT;
-    DECLARE currHostID INT;
+    	DECLARE currHostID INT;
 	DECLARE currName VARCHAR(255);
 	DECLARE currPrice REAL;
 	DECLARE currNights INT;
@@ -22,7 +22,7 @@ BEGIN
 
 	CREATE TABLE DistrictTable(
 	varHomeID INT PRIMARY KEY,
-    varHostID INT,
+    	varHostID INT,
 	varHomeName VARCHAR(255),
 	varPrice INT,
 	varNights INT,
@@ -56,12 +56,12 @@ BEGIN
 
 	(SELECT *
 	FROM DistrictTable JOIN Host ON (varHostID = host_id)
-    WHERE varPrice = (SELECT MAX(varPrice) FROM DistrictTable)
+   	 WHERE varPrice = (SELECT MAX(varPrice) FROM DistrictTable)
 	LIMIT 1)
     UNION
-    (SELECT *
+    	(SELECT *
 	FROM DistrictTable JOIN Host ON (varHostID = host_id)
-    WHERE varPrice = (SELECT MIN(varPrice) FROM DistrictTable)
+   	 WHERE varPrice = (SELECT MIN(varPrice) FROM DistrictTable)
 	LIMIT 1);
 END
 ```
