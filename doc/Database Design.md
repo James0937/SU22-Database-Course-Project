@@ -28,7 +28,8 @@ CREATE TABLE Home
     FOREIGN KEY (neighborhood)
     REFERENCES Neighborhood(neighborhood)
     ON UPDATE CASCADE
-    ON DELETE RESTRICT
+    ON DELETE RESTRICT,
+    FOREIGN KEY (host_id) REFERENCES Host(host_id)
 );
 
 CREATE TABLE Host
@@ -39,14 +40,18 @@ CREATE TABLE Host
 
 CREATE TABLE Rent
 (
-    home_id INT PRIMARY KEY,
+    home_id INT,
     user_id INT,
-    date DATE
+    date DATE,
+    PRIMARY KEY (home_id, user_id),
+    FOREIGN KEY (home_id) REFERENCES Home(home_id),
+    FOREIGN KEY (user_id) REFERENCES Tenant(user_id)
 );
 
 CREATE TABLE Neighborhood (
     neighborhood VARCHAR(255) PRIMARY KEY,
-    safety_score INT
+    safety_score INT,
+    FOREIGN KEY (neighborhood) REFERENCES SurroundingInformation(neighborhood)
 );
 
 CREATE TABLE RoomType (
