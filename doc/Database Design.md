@@ -23,7 +23,12 @@ CREATE TABLE Home
     longtitude REAL,
     price REAL,
     minimum_nights INT,
-    availability_365 INT
+    availability_365 INT,
+    
+    FOREIGN KEY (neighborhood)
+    REFERENCES Neighborhood(neighborhood)
+    ON UPDATE CASCADE
+    ON DELETE RESTRICT
 );
 
 CREATE TABLE Host
