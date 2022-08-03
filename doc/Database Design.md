@@ -28,7 +28,8 @@ CREATE TABLE Home
     FOREIGN KEY (neighborhood)
     REFERENCES Neighborhood(neighborhood)
     ON UPDATE CASCADE
-    ON DELETE RESTRICT
+    ON DELETE RESTRICT,
+    FOREIGN KEY (host_id) REFERENCES Host(host_id)
 );
 
 CREATE TABLE Host
@@ -39,14 +40,18 @@ CREATE TABLE Host
 
 CREATE TABLE Rent
 (
-    home_id INT PRIMARY KEY,
+    home_id INT,
     user_id INT,
-    date DATE
+    date DATE,
+    PRIMARY KEY (home_id, user_id),
+    FOREIGN KEY (home_id) REFERENCES Home(home_id),
+    FOREIGN KEY (user_id) REFERENCES Tenant(user_id)
 );
 
 CREATE TABLE Neighborhood (
     neighborhood VARCHAR(255) PRIMARY KEY,
-    safety_score INT
+    safety_score INT,
+    FOREIGN KEY (neighborhood) REFERENCES SurroundingInformation(neighborhood)
 );
 
 CREATE TABLE RoomType (
@@ -87,7 +92,13 @@ CREATE TABLE Home
     longtitude REAL,
     price REAL,
     minimum_nights INT,
-    availability_365 INT
+    availability_365 INT,
+    
+    FOREIGN KEY (neighborhood)
+    REFERENCES Neighborhood(neighborhood)
+    ON UPDATE CASCADE
+    ON DELETE RESTRICT,
+    FOREIGN KEY (host_id) REFERENCES Host(host_id)
 );
 ```
 ![image](https://user-images.githubusercontent.com/73111353/178646394-905f0b7b-bba1-4814-98be-101bcf776712.png)
@@ -120,7 +131,8 @@ CREATE TABLE Tenant (
 ```
 CREATE TABLE Neighborhood (
     neighborhood VARCHAR(255) PRIMARY KEY,
-    safety_score INT
+    safety_score INT,
+    FOREIGN KEY (neighborhood) REFERENCES SurroundingInformation(neighborhood)
 );
 ```
 ![image](https://user-images.githubusercontent.com/107632673/178653567-81804f3e-1f3b-4f38-b4a0-041d516a5d71.png)
