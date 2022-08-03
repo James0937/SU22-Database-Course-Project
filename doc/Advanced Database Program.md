@@ -1,5 +1,5 @@
 ## Stored Procedure:
-`
+```
 CREATE DEFINER=`root`@`%` PROCEDURE `DistrictResearch`(IN IN_Neighborhood VARCHAR(255))
 BEGIN
 	DECLARE currHomeID INT;
@@ -64,20 +64,20 @@ BEGIN
     WHERE varPrice = (SELECT MIN(varPrice) FROM DistrictTable)
 	LIMIT 1);
 END
-`
+```
 ## Trigger (before INSERT and UPDATE):
-`
+```
 CREATE DEFINER=`root`@`%` TRIGGER `Home_BEFORE_INSERT` BEFORE INSERT ON `Home` FOR EACH ROW BEGIN
 	IF (NEW.latitude < 41.64 OR NEW.latitude > 42.05 OR NEW.longtitude > -87.51 OR NEW.longtitude < -88.03) THEN
 		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Latitude and longtitude must be within Chicago!';
 	END IF;
 END
-`
+```
 
-`
+```
 CREATE DEFINER=`root`@`%` TRIGGER `Home_BEFORE_UPDATE` BEFORE UPDATE ON `Home` FOR EACH ROW BEGIN
 	IF (NEW.latitude < 41.64 OR NEW.latitude > 42.05 OR NEW.longtitude > -87.51 OR NEW.longtitude < -88.03) THEN
 		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Latitude and longtitude must be within Chicago!';
 	END IF;
 END
-`
+```
