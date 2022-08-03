@@ -15,6 +15,9 @@
             width: 100%;
             padding: 10px;
             background-color: lightblue;
+            margin-top: 0px;
+            margin-right: 0px;
+            display: block;
         }
 
         .logo {
@@ -49,7 +52,6 @@
             display: none;
             padding: 6px 12px;
             border: none;
-            border-top: none;
         }
 
         body {
@@ -116,8 +118,8 @@
         }
         
         #Search-button-procedure {
-            height: 60px;
-            width: 60px;
+            height: 43px;
+            width: 43px;
             float: inherit;
             padding: 6px 10px;
             margin-top: 8px;
@@ -133,10 +135,10 @@
         }
 
         #Refresh {
-            height: 60px;
+            height: 43px;
             width: 100px;
             float: right;
-            margin-top: 16px;
+            margin-top: 13px;
             padding: 6px 10px;
             margin-right: 16px;
             background: #ddd;
@@ -171,11 +173,11 @@
         .result-table tr:hover {background-color: #D6EEEE;}
 
         #map {
+            position: fixed;
             margin-top: 10px;
-            height: 400px;
-            width: 400px;
+            height: 550px;
+            width: 800px;
             float: right;
-            display: inline;
         }
         
         @media (max-width: 600px) {
@@ -196,16 +198,19 @@
             content: "\26A0";
         }
 
-        #Overview {
-            display:block;
-        }
-
         .edit_button {
             border-radius: 4px;
             font-size: 15px;
             background-color: lightblue;
             padding: 3px;
             display:inline;
+        }
+
+        #image {
+            height: 600px;
+            width: auto;
+            position: fixed;
+            margin-left: 20px;
         }
     </style>
 </head>
@@ -346,7 +351,7 @@
                         </table>
                     </td>
                     <td>
-                        <img src="../../../data/Chicago-Neighborhood-Guide-Map-of-Chicago-Neighborhoods-with-Real-Estate-Listings-Best-Chicago-Properties-LLC.jpeg" alt="Chicago Neighborhood Map">
+                        <img id="image" src="../static/img/neighborhoods.jpeg" alt="Chicago Neighborhood Map">
                     </td>
                 </tr>
             </table>
