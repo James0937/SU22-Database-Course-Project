@@ -53,3 +53,9 @@ Our future work could be adding a certain period of time for our attributes such
 As a team leader, I (Hongxiao Chen) mainly worked on the backend functions that control the webpage and communicate with the SQL server by using JavaScript and Python. Sifei Du has experience in HTML language during his internship. He developed a beautiful interface that is highly accessible even for new users. Jiacheng Guo helped to develop some Python functions and SQL schema design. Zhiyuan Wang also contributed to the code for communicating with SQL using Python. He also helped with ER Diagram, SQL table schema, and advanced database program.
 
 Despite the fact that some of our team members are located in China and we have the problem of time zone, we still complete our group project with high efficiency. I think distributing the workload beforehand and setting up deadlines for each step is crucial for our project to progress. Even though we cannot discuss face-to-face, we use GitHub to synchronize our work and leave our ideas in the discussion group when we are awake. Overall, I think our teamwork is successful.
+
+## Extra. Makeup for fulfilling the missing requirements in stages 2&3
+
+In addtion, we made changes in "ER diagram.md" and "Database Design.md" to maintain the requirements of stage 2&3 better.
+For stage 2, we updated the ER diagram. We made a relationship between "neighborhood" and "surrounding information". The link of md is: https://github.com/cs411-su22/su22-cs411-team023-CDGW/blob/main/doc/ER-Diagram.md
+For stage 3, we corrected the implementation of database. We added some foreign keys according to the relational schema we made. The update is shown in the "Table" part of "Database Design.md" file. The link is: https://github.com/cs411-su22/su22-cs411-team023-CDGW/blob/main/doc/Database%20Design.md
