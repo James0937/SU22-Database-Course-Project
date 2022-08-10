@@ -57,5 +57,7 @@ Despite the fact that some of our team members are located in China and we have 
 ## Extra. Makeup for fulfilling the missing requirements in stages 2&3
 
 In addtion, we made changes in "ER diagram.md" and "Database Design.md" to maintain the requirements of stage 2&3 better.
+
 For stage 2, we updated the ER diagram. We made a relationship between "neighborhood" and "surrounding information". The link of md is: https://github.com/cs411-su22/su22-cs411-team023-CDGW/blob/main/doc/ER-Diagram.md
+
 For stage 3, we corrected the implementation of database. We added some foreign keys according to the relational schema we made. The update is shown in the "Table" part of "Database Design.md" file. The link is: https://github.com/cs411-su22/su22-cs411-team023-CDGW/blob/main/doc/Database%20Design.md
