@@ -1,43 +1,23 @@
-# team023-CDGW
+### Web Application Development Based on Airbnb Chicago Datasets
 
-App Link: https://flash-garage-354803.uc.r.appspot.com/
+App Link (Expired now): https://flash-garage-354803.uc.r.appspot.com/
 
-This is a template for CS411 project repository. Please make sure that your title follows the convention: [TeamID]-[YourTeamName]. All TeamID should have a three digit coding (i.e. if you are team 20, you should have `team020` as your ID.). You should also make sure that your url for this repository is [su22-cs411-team000-teamname.git] so TAs can correctly clone your repository and keep them up-to-date.
+This is the repository of the UIUC CS411 Database Systems project. It's a group project, and our team, "CDGW", consists of four individuals. The details can be checked in the file "TeamInfo.md". I used my educational account, "JamesW37 - Zhiyuan Wang", to join this repository.
 
-Once you setup your project, please remember to submit your team formation to the team form.
+We used to host this application online, but now it's expired. Its URL is https://flash-garage-354803.uc.r.appspot.com/
 
-## Direction for git:
+We also made an introduction video and posted it on Youtube. The video link is: https://www.youtube.com/watch?v=gjFDd86484c
 
-### To commit, run:
+## data
 
-`
-git add -A
-`
+The folder for data.
 
-`
-git commit -m "REPLACE THIS WITH YOUR COMMIT MESSAGE"
-`
+## demo
 
-`
-git push origin main
-`
+The folder for the main programs.
 
-### To fetch latest commit, run:
+## doc
 
-`
-git pull origin main
-`
-
-## Permission
-Please make your repository private. TAs can view private ones.
-
-## Preparing for your release
-Eash submission should be in it's own [release](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases). Release are specific freezes to your repository. You should submit your commit hash on canvas or google sheet. When tagging your stage, please use the tag `stage.x` where x is the number to represent the stage.
-
-## Keeping things up-to-date
-You should make sure you keep your project root files up-to-date. Information for each file/folders are explained.
-
-## Code Contribution
-Individual code contribution will be used to evaluate individual contribution to the project.
+This folder contains all documents of our project, including the Proposal, ER Diagram, Database Structure, etc.
 
 This commit is a testing commit. >.<
